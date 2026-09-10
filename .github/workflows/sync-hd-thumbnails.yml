@@ -11,45 +11,39 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Restore and update portfolio
+      - name: Update portfolio thumbnail paths and layout
         shell: bash
         run: |
-          git checkout 7c5170b0a4d3207ec4e0b1aef2991c42b0336d0f -- index.html
           python3 - <<'PY'
           from pathlib import Path
-          import re
           path = Path('index.html')
           text = path.read_text(encoding='utf-8')
           replacements = {
-              'Airbnb Bangkok — Listing & Pricing Analysis': 'assets/project-thumbnails/03_Airbnb_Bangkok_Pricing_Analysis.png',
-              'Hotel Booking Cancellation Prediction': 'assets/project-thumbnails/01_Hotel_Booking_Cancellation_Prediction.png',
-              'OLX Used Cars — Market Price Analysis': 'assets/project-thumbnails/07_OLX_Used_Cars_Market_Price_Analysis.png',
-              'CRUD Inventory Management System': 'assets/project-thumbnails/08_CRUD_Inventory_Management_System.png',
-              'Movie Analytics Dashboard (OMDB API)': 'assets/project-thumbnails/06_Movie_Analytics_Dashboard.png',
-              'Indonesia EV Market & Value Analysis': 'assets/project-thumbnails/04_Indonesia_EV_Market_Value_Analysis.png',
-              'Streaming Platform Analytics Dashboard': 'assets/project-thumbnails/05_Streaming_Platform_Analytics_Dashboard.png',
-              'Optimizing Telemarketing for Term Deposit Subscriptions': 'assets/project-thumbnails/02_Telemarketing_Term_Deposit_Optimization.png',
+              'assets/project-thumbnails/hd/hotel-booking-cancellation.svg': 'assets/project-thumbnails/01_Hotel_Booking_Cancellation_Prediction.png',
+              'assets/project-thumbnails/hd/telemarketing-term-deposit.svg': 'assets/project-thumbnails/02_Telemarketing_Term_Deposit_Optimization.png',
+              'assets/project-thumbnails/hd/airbnb-bangkok-analysis.svg': 'assets/project-thumbnails/03_Airbnb_Bangkok_Pricing_Analysis.png',
+              'assets/project-thumbnails/ev-market-value-thumbnail.png': 'assets/project-thumbnails/04_Indonesia_EV_Market_Value_Analysis.png',
+              'assets/project-thumbnails/hd/streaming-platform-analytics.svg': 'assets/project-thumbnails/05_Streaming_Platform_Analytics_Dashboard.png',
+              'assets/project-thumbnails/hd/omdb-movie-analytics.svg': 'assets/project-thumbnails/06_Movie_Analytics_Dashboard.png',
+              'assets/project-thumbnails/hd/olx-used-cars-analysis.svg': 'assets/project-thumbnails/07_OLX_Used_Cars_Market_Price_Analysis.png',
+              'assets/project-thumbnails/hd/inventory-management.svg': 'assets/project-thumbnails/08_CRUD_Inventory_Management_System.png',
+              'assets/project-thumbnails/omdb-movie-analytics-thumbnail.png': 'assets/project-thumbnails/06_Movie_Analytics_Dashboard.png',
+              'assets/project-thumbnails/streaming-platform-thumbnail.png': 'assets/project-thumbnails/05_Streaming_Platform_Analytics_Dashboard.png',
           }
-          cards = re.findall(r'<div class="project-card[^>]*>.*?</div>\s*</div>', text, flags=re.S|re.I)
-          for card in cards:
-              title_m = re.search(r'<div class="project-title">(.*?)</div>', card, flags=re.S|re.I)
-              if not title_m:
-                  continue
-              title = re.sub(r'<[^>]+>', '', title_m.group(1)).strip()
-              src = replacements.get(title)
-              if not src:
-                  continue
-              new_card = re.sub(r'(<img\b[^>]*?\bsrc=")[^"]*("[^>]*>)', lambda m: m.group(1)+src+m.group(2), card, count=1, flags=re.I|re.S)
-              if title == 'Movie Analytics Dashboard (OMDB API)':
-                  new_card = new_card.replace('https://github.com/briannaufal211', 'https://github.com/briannaufal211/imdb-movie-analytics-dashboard')
-              text = text.replace(card, new_card, 1)
-          text = re.sub(r'\.project-thumb \{[^}]*\}', '.project-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; display: block; background: var(--bg3); }', text, count=1)
+          for old, new in replacements.items():
+              text = text.replace(old, new)
+          text = text.replace('https://github.com/briannaufal211" target="_blank">GitHub', 'https://github.com/briannaufal211/imdb-movie-analytics-dashboard" target="_blank">GitHub', 1)
+          # Consistent thumbnail presentation: every card uses one column in the responsive grid.
           text = text.replace('.project-card.featured { grid-column: span 2; }', '.project-card.featured { grid-column: span 1; }')
+          text = text.replace('.project-card.featured{grid-column:span 2}', '.project-card.featured{grid-column:span 1}')
+          if '.project-thumb {' in text:
+              import re
+              text = re.sub(r'\.project-thumb \{[^}]*\}', '.project-thumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center; display: block; background: var(--bg3); }', text, count=1)
           path.write_text(text, encoding='utf-8')
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "restore portfolio and use project PNG thumbnails"
+          git commit -m "use uploaded project thumbnails"
           git push
