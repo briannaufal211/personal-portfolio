@@ -1,0 +1,62 @@
+name: Sync portfolio thumbnails
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update project thumbnails and card layout
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacements = {
+              'Airbnb Bangkok — Listing & Pricing Analysis': 'assets/project-thumbnails/hd/airbnb-bangkok-analysis.svg',
+              'Hotel Booking Cancellation Prediction': 'assets/project-thumbnails/hd/hotel-booking-cancellation.svg',
+              'OLX Used Cars — Market Price Analysis': 'assets/project-thumbnails/hd/olx-used-cars-analysis.svg',
+              'CRUD Inventory Management System': 'assets/project-thumbnails/hd/inventory-management.svg',
+              'Movie Analytics Dashboard (OMDB API)': 'assets/project-thumbnails/hd/omdb-movie-analytics.svg',
+              'Indonesia EV Market & Value Analysis': 'assets/project-thumbnails/hd/indonesia-ev-market.svg',
+              'Streaming Platform Analytics Dashboard': 'assets/project-thumbnails/hd/streaming-platform-analytics.svg',
+              'Optimizing Telemarketing for Term Deposit Subscriptions': 'assets/project-thumbnails/hd/telemarketing-term-deposit.svg',
+          }
+
+          cards = re.findall(r'<article class="project-card[^>]*>.*?</article>', text, flags=re.S|re.I)
+          for card in cards:
+              title_m = re.search(r'<div class="project-title">(.*?)</div>', card, flags=re.S|re.I)
+              if not title_m:
+                  continue
+              title = re.sub(r'<[^>]+>', '', title_m.group(1)).strip()
+              if title == 'IMDb Movie Analytics Dashboard':
+                  text = text.replace(card, '', 1)
+                  continue
+              src = replacements.get(title)
+              if not src:
+                  continue
+              new_card = re.sub(r'(<img\b[^>]*?\bsrc=")[^"]*("[^>]*>)', lambda m: m.group(1)+src+m.group(2), card, count=1, flags=re.I|re.S)
+              if title == 'Movie Analytics Dashboard (OMDB API)':
+                  new_card = new_card.replace('https://github.com/briannaufal211', 'https://github.com/briannaufal211/imdb-movie-analytics-dashboard')
+              text = text.replace(card, new_card, 1)
+
+          text = text.replace('.project-card.featured { grid-column: span 2; }', '.project-card.featured { grid-column: span 1; }')
+          text = text.replace('.project-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--bg3); }', '.project-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center; display: block; background: var(--bg3); }')
+          path.write_text(text, encoding='utf-8')
+          PY
+          if git diff --quiet; then
+            echo "No changes required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "use consistent HD project thumbnails"
+          git push
