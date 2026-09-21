@@ -1,1 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#080d14"/><stop offset="1" stop-color="#122033"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".28"/></filter></defs><rect width="1600" height="900" fill="url(#bg)"/><circle cx="1490" cy="100" r="230" fill="#63e6c2" opacity=".05"/><circle cx="120" cy="810" r="240" fill="#ff8a6d" opacity=".035"/><rect x="60" y="60" width="1480" height="780" rx="40" fill="#0c141e" stroke="#273646"/><text x="120" y="140" fill="#63e6c2" font-size="22" font-weight="700" letter-spacing="3" font-family="Arial">SALES &amp; COMMERCIAL ANALYTICS</text><text x="120" y="215" fill="#f4f6f8" font-size="52" font-weight="700" font-family="Arial">ADIDAS SALES PERFORMANCE</text><text x="120" y="275" fill="#f4f6f8" font-size="52" font-weight="700" font-family="Arial">&amp; REVENUE OPTIMIZATION</text><text x="120" y="318" fill="#91a0b0" font-size="23" font-family="Arial">MySQL 8.0 • Commercial performance analysis • 2020–2021</text><rect x="120" y="355" width="640" height="2" fill="#273646"/><rect x="120" y="395" width="640" height="160" rx="24" fill="#111a24" stroke="#263444"/><text x="155" y="440" fill="#76879a" font-size="16" font-weight="700" letter-spacing="2" font-family="Arial">PORTFOLIO CASE STUDY</text><text x="155" y="485" fill="#f4f6f8" font-size="29" font-weight="700" font-family="Arial">Revenue → profitability → opportunity</text><text x="155" y="522" fill="#91a0b0" font-size="18" font-family="Arial">Evidence-led analysis across product, region,</text><text x="155" y="548" fill="#91a0b0" font-size="18" font-family="Arial">retailer, and sales method performance.</text><g filter="url(#shadow)"><rect x="900" y="190" width="500" height="470" rx="28" fill="#111a24" stroke="#263444"/></g><text x="940" y="240" fill="#91a0b0" font-size="20" font-family="Arial">Executive KPI baseline</text><rect x="940" y="275" width="205" height="110" rx="18" fill="#0e1822" stroke="#263444"/><text x="965" y="312" fill="#76879a" font-size="14" font-weight="700" font-family="Arial">TOTAL REVENUE</text><text x="965" y="355" fill="#f5f7f9" font-size="34" font-weight="700" font-family="Arial">$899.90M</text><rect x="1165" y="275" width="205" height="110" rx="18" fill="#0e1822" stroke="#263444"/><text x="1190" y="312" fill="#76879a" font-size="14" font-weight="700" font-family="Arial">OPERATING MARGIN</text><text x="1190" y="355" fill="#63e6c2" font-size="34" font-weight="700" font-family="Arial">36.91%</text><text x="940" y="425" fill="#91a0b0" font-size="18" font-family="Arial">2021 YoY revenue growth</text><text x="940" y="470" fill="#f5f7f9" font-size="48" font-weight="700" font-family="Arial">+294.2%</text><rect x="940" y="500" width="430" height="18" rx="9" fill="#263444"/><rect x="940" y="500" width="360" height="18" rx="9" fill="#63e6c2"/><text x="940" y="560" fill="#91a0b0" font-size="17" font-family="Arial">Opportunity screen</text><text x="1110" y="560" fill="#63e6c2" font-size="17" font-weight="700" font-family="Arial">8 combinations flagged</text><rect x="120" y="650" width="640" height="120" rx="24" fill="#0f1822" stroke="#263444"/><text x="155" y="690" fill="#76879a" font-size="15" font-weight="700" letter-spacing="2" font-family="Arial">ANALYTICAL FOCUS</text><text x="155" y="730" fill="#f4f6f8" font-size="20" font-family="Arial">Revenue • Profitability • Product • Region • Retailer • Channel</text><text x="155" y="756" fill="#91a0b0" font-size="17" font-family="Arial">Data-quality validation + transparent opportunity screening</text><text x="120" y="805" fill="#5f7082" font-size="16" letter-spacing="1" font-family="Arial">BRIAN NAUFAL • DATA ANALYST / SALES &amp; COMMERCIAL ANALYTICS</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#050607"/>
+    <stop offset="1" stop-color="#121417"/>
+  </linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<text x="720" y="80" fill="#212326" font-size="150" font-weight="800" font-family="Arial" letter-spacing="-6">SALES</text>
+<text x="40" y="860" fill="#1b1d20" font-size="110" font-weight="800" font-family="Arial">ANALYTICS</text>
+
+<!-- Adidas mark + title block -->
+<g transform="translate(70,105)">
+  <polygon points="0,215 52,215 105,285 53,285" fill="#f4f4f1"/>
+  <polygon points="62,170 117,170 185,285 130,285" fill="#f4f4f1"/>
+  <polygon points="128,118 184,118 255,285 198,285" fill="#f4f4f1"/>
+  <text x="5" y="375" fill="#f4f4f1" font-size="72" font-weight="700" font-family="Arial" letter-spacing="-3">adidas</text>
+  <text x="5" y="450" fill="#f4f4f1" font-size="40" font-weight="700" font-family="Arial">Sales Performance &amp;</text>
+  <text x="5" y="494" fill="#f4f4f1" font-size="40" font-weight="700" font-family="Arial">Revenue Optimization</text>
+  <text x="5" y="555" fill="#aeb1b4" font-size="16" font-weight="700" font-family="Arial" letter-spacing="3">SQL-BASED SALES &amp; COMMERCIAL</text>
+  <text x="5" y="582" fill="#aeb1b4" font-size="16" font-weight="700" font-family="Arial" letter-spacing="3">ANALYTICS CASE STUDY</text>
+  <text x="5" y="645" fill="#777b7e" font-size="13" font-family="Arial" letter-spacing="2">MYSQL 8.0  •  SQL  •  WINDOW FUNCTIONS  •  CTE</text>
+  <text x="5" y="720" fill="#f4f4f1" font-size="18" font-weight="700" font-family="Arial" letter-spacing="4">ANALYZE  /  INSIGHTS  /  OPTIMIZE</text>
+</g>
+
+<!-- torn paper panels -->
+<g filter="url(#shadow)">
+  <rect x="610" y="75" width="820" height="210" rx="8" fill="#efeee8"/>
+  <rect x="570" y="305" width="530" height="250" rx="8" fill="#efeee8"/>
+  <rect x="1080" y="320" width="450" height="235" rx="8" fill="#efeee8"/>
+  <rect x="550" y="585" width="520" height="225" rx="8" fill="#efeee8"/>
+  <rect x="1050" y="580" width="480" height="235" rx="8" fill="#efeee8"/>
+</g>
+
+<!-- Top panel: revenue -->
+<g>
+  <text x="640" y="112" fill="#111315" font-size="25" font-weight="700" font-family="Arial">REVENUE PERFORMANCE</text>
+  <text x="640" y="141" fill="#606469" font-size="13" font-family="Arial">Annual revenue • USD million</text>
+  <line x1="650" y1="250" x2="960" y2="250" stroke="#9b9d9d" stroke-width="2"/>
+  <rect x="700" y="196" width="72" height="54" fill="#35566b"/>
+  <rect x="825" y="94" width="72" height="156" fill="#35566b"/>
+  <text x="689" y="183" fill="#111315" font-size="14" font-weight="700" font-family="Arial">$182.08M</text>
+  <text x="810" y="82" fill="#111315" font-size="14" font-weight="700" font-family="Arial">$717.82M</text>
+  <text x="724" y="270" fill="#55595c" font-size="13" font-family="Arial">2020</text>
+  <text x="849" y="270" fill="#55595c" font-size="13" font-family="Arial">2021</text>
+  <text x="1010" y="135" fill="#5f6366" font-size="14" font-weight="700" font-family="Arial">TOTAL REVENUE</text>
+  <text x="1008" y="180" fill="#111315" font-size="42" font-weight="800" font-family="Arial">$899.90M</text>
+  <text x="1010" y="213" fill="#137b67" font-size="19" font-weight="800" font-family="Arial">+294.2% YoY</text>
+  <text x="1012" y="239" fill="#686c6f" font-size="12" font-family="Arial">2021 vs 2020</text>
+  <rect x="1345" y="92" width="60" height="28" fill="#d2d0c8"/>
+  <rect x="620" y="62" width="115" height="23" fill="#d2d0c8"/>
+</g>
+
+<!-- Analysis panel -->
+<g>
+  <text x="605" y="340" fill="#111315" font-size="24" font-weight="700" font-family="Arial">OUR ANALYSIS</text>
+  <text x="605" y="375" fill="#111315" font-size="22" font-weight="700" font-family="Arial">Revenue, profitability &amp;</text>
+  <text x="605" y="404" fill="#111315" font-size="22" font-weight="700" font-family="Arial">commercial drivers</text>
+  <g font-family="Arial" font-size="14" fill="#4a4e51">
+    <circle cx="615" cy="445" r="6" fill="#35566b"/><text x="632" y="450">Product performance</text>
+    <circle cx="615" cy="475" r="6" fill="#35566b"/><text x="632" y="480">Regional performance</text>
+    <circle cx="615" cy="505" r="6" fill="#35566b"/><text x="632" y="510">Retailer performance</text>
+    <circle cx="615" cy="535" r="6" fill="#35566b"/><text x="632" y="540">Sales-method analysis</text>
+  </g>
+</g>
+
+<!-- Regional panel -->
+<g>
+  <text x="1115" y="350" fill="#111315" font-size="23" font-weight="700" font-family="Arial">REGIONAL PERFORMANCE</text>
+  <text x="1115" y="378" fill="#686d70" font-size="13" font-family="Arial">Revenue contribution</text>
+  <g font-family="Arial" font-size="13" font-weight="700" fill="#222629">
+    <text x="1115" y="420">West</text><text x="1115" y="453">Northeast</text><text x="1115" y="486">Southeast</text><text x="1115" y="519">South</text><text x="1115" y="552">Midwest</text>
+  </g>
+  <g fill="#d0d1cf">
+    <rect x="1200" y="406" width="225" height="15"/><rect x="1200" y="439" width="225" height="15"/><rect x="1200" y="472" width="225" height="15"/><rect x="1200" y="505" width="225" height="15"/><rect x="1200" y="538" width="225" height="15"/>
+  </g>
+  <g fill="#35566b">
+    <rect x="1200" y="406" width="225" height="15"/><rect x="1200" y="439" width="155" height="15"/><rect x="1200" y="472" width="136" height="15"/><rect x="1200" y="505" width="121" height="15"/><rect x="1200" y="538" width="113" height="15"/>
+  </g>
+  <g fill="#34383b" font-family="Arial" font-size="12" font-weight="700">
+    <text x="1440" y="418">30.0%</text><text x="1440" y="451">20.7%</text><text x="1440" y="484">18.1%</text><text x="1440" y="517">16.1%</text><text x="1440" y="550">15.1%</text>
+  </g>
+</g>
+
+<!-- KPI panel -->
+<g>
+  <text x="585" y="620" fill="#111315" font-size="23" font-weight="700" font-family="Arial">KEY FINDINGS</text>
+  <text x="585" y="675" fill="#111315" font-size="28" font-weight="800" font-family="Arial">36.91%</text>
+  <text x="585" y="698" fill="#686c6f" font-size="11" font-family="Arial">Aggregate margin</text>
+  <text x="810" y="675" fill="#111315" font-size="28" font-weight="800" font-family="Arial">23.2%</text>
+  <text x="810" y="698" fill="#686c6f" font-size="11" font-family="Arial">Men's Street Footwear share</text>
+  <text x="585" y="753" fill="#111315" font-size="28" font-weight="800" font-family="Arial">33.20%</text>
+  <text x="585" y="776" fill="#686c6f" font-size="11" font-family="Arial">West regional margin</text>
+  <text x="810" y="753" fill="#111315" font-size="28" font-weight="800" font-family="Arial">8</text>
+  <text x="810" y="776" fill="#686c6f" font-size="11" font-family="Arial">Product-region combinations flagged</text>
+</g>
+
+<!-- Commercial drivers -->
+<g>
+  <text x="1085" y="620" fill="#111315" font-size="23" font-weight="700" font-family="Arial">COMMERCIAL DRIVERS</text>
+  <text x="1085" y="655" fill="#6a6e71" font-size="12" font-family="Arial">Retailer</text>
+  <text x="1240" y="655" fill="#111315" font-size="18" font-weight="700" font-family="Arial">West Gear</text>
+  <text x="1085" y="681" fill="#6a6e71" font-size="11" font-family="Arial">Revenue</text>
+  <text x="1240" y="681" fill="#111315" font-size="13" font-weight="700" font-family="Arial">$242.96M</text>
+  <text x="1085" y="715" fill="#6a6e71" font-size="12" font-family="Arial">Sales method</text>
+  <text x="1240" y="715" fill="#111315" font-size="18" font-weight="700" font-family="Arial">In-store</text>
+  <text x="1085" y="741" fill="#6a6e71" font-size="11" font-family="Arial">Revenue</text>
+  <text x="1240" y="741" fill="#111315" font-size="13" font-weight="700" font-family="Arial">$356.64M</text>
+  <text x="1085" y="776" fill="#6a6e71" font-size="12" font-family="Arial">Online margin</text>
+  <text x="1240" y="776" fill="#137b67" font-size="17" font-weight="800" font-family="Arial">38.99%</text>
+</g>
+
+<!-- Small footer note -->
+<g>
+  <rect x="1260" y="705" width="275" height="80" fill="#0d0f11" opacity=".88"/>
+  <text x="1282" y="728" fill="#63c9b1" font-size="12" font-weight="700" font-family="Arial">FURTHER INVESTIGATION</text>
+  <text x="1282" y="750" fill="#efeee8" font-size="11" font-family="Arial">8 product–region combinations</text>
+  <text x="1282" y="767" fill="#9da2a5" font-size="10" font-family="Arial">State • retailer • sales-method mix</text>
+</g>
+
+<!-- rough tape -->
+<rect x="1480" y="300" width="70" height="18" fill="#d2d0c8"/>
+<rect x="520" y="540" width="95" height="18" fill="#d2d0c8"/>
+<rect x="1000" y="560" width="85" height="18" fill="#d2d0c8"/>
+</svg>
