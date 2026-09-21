@@ -32,6 +32,27 @@ jobs:
           }
           for old, new in replacements.items():
               text = text.replace(old, new)
+
+          adidas_card = '''<!-- P12: Adidas Sales Performance & Revenue Optimization -->
+          <div class="project-card reveal project-order-6">
+          <a aria-label="Open Adidas Sales Performance & Revenue Optimization project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Adidas-Sales-Performance-Revenue-Optimization" rel="noopener noreferrer" target="_blank"><img alt="Adidas Sales Performance & Revenue Optimization" class="project-thumb" src="assets/project-thumbnails/hd/adidas-sales-performance-revenue-optimization.svg"/></a>
+          <div class="project-thumb-placeholder" style="display:none">📈</div>
+          <div class="project-body">
+          <div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-eng">SQL</span></div>
+          <h3 class="project-title">Adidas Sales Performance &amp; Revenue Optimization</h3>
+          <p class="project-desc">Built an end-to-end MySQL sales analytics case study to evaluate revenue, profitability, product, regional, retailer, and sales-method performance — from raw-data validation through executive reporting.</p>
+          <div class="project-insight"><strong>Key Insight:</strong> <span>Revenue increased 294.2% in 2021, while the West region led revenue but had the lowest regional margin. Men's Street Footwear was the largest product contributor, and an evidence-based screen flagged 8 product-region combinations for further investigation.</span></div>
+          <div class="project-footer">
+          <div class="project-tools"><span class="tool-pill">MySQL</span><span class="tool-pill">SQL</span><span class="tool-pill">Window Functions</span><span class="tool-pill">CTE</span></div>
+          <a class="project-link" href="https://github.com/briannaufal211/Adidas-Sales-Performance-Revenue-Optimization" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+          </div>
+          </div>
+          </div>
+          '''
+          marker = '<!-- P1: Airbnb Bangkok featured -->'
+          if 'Adidas Sales Performance &amp; Revenue Optimization' not in text and marker in text:
+              text = text.replace(marker, adidas_card + marker, 1)
+
           text = text.replace('https://github.com/briannaufal211" target="_blank">GitHub', 'https://github.com/briannaufal211/imdb-movie-analytics-dashboard" target="_blank">GitHub', 1)
           # Consistent thumbnail presentation: every card uses one column in the responsive grid.
           text = text.replace('.project-card.featured { grid-column: span 2; }', '.project-card.featured { grid-column: span 1; }')
@@ -45,5 +66,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "use uploaded project thumbnails"
+          git commit -m "add Adidas sales analytics project to portfolio"
           git push
