@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#080d12"/>
+    <stop offset="1" stop-color="#16232d"/>
+  </linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".35"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<text x="1120" y="90" text-anchor="end" fill="#26343e" font-family="Arial" font-size="150" font-weight="900">INVENTORY</text>
+
+<g transform="translate(90,105)">
+  <rect x="0" y="0" width="210" height="74" rx="16" fill="#00e5b0"/>
+  <text x="105" y="48" text-anchor="middle" fill="#07100f" font-family="Arial" font-size="34" font-weight="900">BrINV</text>
+  <text x="0" y="138" fill="#f4f6f8" font-family="Arial" font-size="51" font-weight="800">FMCG Inventory</text>
+  <text x="0" y="194" fill="#f4f6f8" font-family="Arial" font-size="51" font-weight="800">Management System</text>
+  <text x="0" y="255" fill="#9aa6af" font-family="Arial" font-size="18" letter-spacing="3">PYTHON-BASED BUSINESS PROCESS SIMULATION</text>
+  <text x="0" y="304" fill="#7d8992" font-family="Arial" font-size="16">Warehouse workflow • CRUD • traceability • monitoring</text>
+
+  <g transform="translate(0,380)" fill="none" stroke="#a9b4bc" stroke-width="3">
+    <rect x="0" y="0" width="145" height="105" rx="18"/><rect x="170" y="0" width="145" height="105" rx="18"/><rect x="340" y="0" width="145" height="105" rx="18"/>
+  </g>
+  <g font-family="Arial" font-size="15" font-weight="700" fill="#f2f4f5">
+    <text x="72" y="43" text-anchor="middle">CRUD</text><text x="72" y="70" text-anchor="middle" fill="#7f8b93">Product Data</text>
+    <text x="242" y="43" text-anchor="middle">TRACE</text><text x="242" y="70" text-anchor="middle" fill="#7f8b93">Batch / Code</text>
+    <text x="412" y="43" text-anchor="middle">MONITOR</text><text x="412" y="70" text-anchor="middle" fill="#7f8b93">Low Stock</text>
+  </g>
+  <text x="0" y="560" fill="#00e5b0" font-family="Arial" font-size="16" font-weight="700" letter-spacing="3">BUSINESS REQUIREMENTS • PROCESS FLOW • USE CASES</text>
+</g>
+
+<g filter="url(#s)">
+  <rect x="690" y="120" width="780" height="610" rx="28" fill="#10171e" stroke="#2b3a45"/>
+</g>
+
+<g transform="translate(735,160)" font-family="Arial">
+  <text x="0" y="0" fill="#8d9aa3" font-size="15" font-weight="700" letter-spacing="2">INVENTORY OVERVIEW</text>
+  <text x="0" y="54" fill="#f4f6f8" font-size="38" font-weight="800">Operational Visibility</text>
+
+  <g transform="translate(0,95)">
+    <rect x="0" y="0" width="215" height="122" rx="18" fill="#16212a" stroke="#2b3a45"/>
+    <text x="25" y="34" fill="#7f8b93" font-size="12" font-weight="700">TOTAL SKU</text>
+    <text x="25" y="82" fill="#f4f6f8" font-size="38" font-weight="900">4</text>
+
+    <rect x="235" y="0" width="215" height="122" rx="18" fill="#16212a" stroke="#2b3a45"/>
+    <text x="260" y="34" fill="#7f8b93" font-size="12" font-weight="700">UNITS ON HAND</text>
+    <text x="260" y="82" fill="#f4f6f8" font-size="34" font-weight="900">570</text>
+
+    <rect x="470" y="0" width="215" height="122" rx="18" fill="#16212a" stroke="#2b3a45"/>
+    <text x="495" y="34" fill="#7f8b93" font-size="12" font-weight="700">INVENTORY VALUE</text>
+    <text x="495" y="82" fill="#00e5b0" font-size="29" font-weight="900">Rp14.69M</text>
+  </g>
+
+  <text x="0" y="270" fill="#8d9aa3" font-size="14" font-weight="700">SYSTEM FLOW</text>
+  <g transform="translate(0,295)">
+    <rect x="0" y="0" width="145" height="62" rx="14" fill="#0e2220" stroke="#29564e"/>
+    <text x="72" y="38" text-anchor="middle" fill="#00e5b0" font-size="14" font-weight="800">CREATE</text>
+    <rect x="165" y="0" width="145" height="62" rx="14" fill="#16212a" stroke="#2b3a45"/>
+    <text x="237" y="38" text-anchor="middle" fill="#e9ecee" font-size="14" font-weight="800">UPDATE</text>
+    <rect x="330" y="0" width="145" height="62" rx="14" fill="#16212a" stroke="#2b3a45"/>
+    <text x="402" y="38" text-anchor="middle" fill="#e9ecee" font-size="14" font-weight="800">DELETE</text>
+    <rect x="495" y="0" width="190" height="62" rx="14" fill="#16212a" stroke="#2b3a45"/>
+    <text x="590" y="38" text-anchor="middle" fill="#e9ecee" font-size="14" font-weight="800">REPORT &amp; MONITOR</text>
+  </g>
+
+  <line x1="0" y1="400" x2="685" y2="400" stroke="#2b3a45"/>
+  <text x="0" y="440" fill="#f0f2f3" font-size="20" font-weight="800">Business Analysis Layer</text>
+  <text x="0" y="473" fill="#9aa6af" font-size="15">Functional requirements • business rules •</text>
+  <text x="0" y="498" fill="#9aa6af" font-size="15">process mapping • operational KPIs</text>
+</g>
+
+<text x="90" y="835" fill="#737f88" font-family="Arial" font-size="14" letter-spacing="2">BRIAN NAUFAL • DATA ANALYST / BUSINESS ANALYSIS</text>
+</svg>
