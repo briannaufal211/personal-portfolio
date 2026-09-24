@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7fbff"/><stop offset="1" stop-color="#dbeeff"/></linearGradient>
+  <linearGradient id="nav" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#102b57"/><stop offset="1" stop-color="#1558bf"/></linearGradient>
+  <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#edf7ff"/></linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0a2750" flood-opacity=".22"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<path d="M900 0H1600V900H760c140-120 190-290 184-470C938 250 895 112 900 0Z" fill="#eef7ff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+  <g transform="translate(70 60)">
+    <rect width="104" height="104" rx="24" fill="#1463c6"/>
+    <path d="M25 34 52 18l28 16-28 16zM25 42v30l27 16V58zM80 42v30L52 88V58z" fill="#fff"/>
+    <text x="132" y="82" font-size="86" font-weight="800" fill="#0e2448">BrI</text><text x="305" y="82" font-size="86" font-weight="800" fill="#1769ce">NV</text>
+  </g>
+  <text x="72" y="252" font-size="60" font-weight="800" fill="#0e2448">FMCG Inventory</text>
+  <text x="72" y="320" font-size="60" font-weight="800" fill="#0e2448">Management System</text>
+  <text x="75" y="372" font-size="22" font-weight="600" letter-spacing="3" fill="#3e618d">PYTHON • INVENTORY OPERATIONS • CRUD • TRACEABILITY</text>
+
+  <g transform="translate(72 430)" filter="url(#shadow)">
+    <rect width="720" height="370" rx="30" fill="#fff"/>
+    <rect x="0" y="0" width="720" height="72" rx="30" fill="url(#nav)"/>
+    <rect x="0" y="44" width="720" height="28" fill="url(#nav)"/>
+    <circle cx="40" cy="36" r="15" fill="#fff"/><text x="68" y="44" font-size="22" font-weight="700" fill="#fff">BrINV Dashboard</text>
+    <rect x="28" y="95" width="200" height="92" rx="18" fill="#eff7ff"/><text x="46" y="128" font-size="17" fill="#55708f">TOTAL STOCK</text><text x="46" y="165" font-size="34" font-weight="800" fill="#0e2448">12,480</text>
+    <rect x="248" y="95" width="200" height="92" rx="18" fill="#eff7ff"/><text x="266" y="128" font-size="17" fill="#55708f">PRODUCTS</text><text x="266" y="165" font-size="34" font-weight="800" fill="#0e2448">246 SKUs</text>
+    <rect x="468" y="95" width="224" height="92" rx="18" fill="#fff3ef"/><text x="486" y="128" font-size="17" fill="#a85b42">LOW STOCK</text><text x="486" y="165" font-size="34" font-weight="800" fill="#c8492d">18</text>
+    <rect x="28" y="212" width="410" height="132" rx="18" fill="#fbfdff" stroke="#d9e9f7"/><text x="48" y="243" font-size="18" font-weight="700" fill="#17385f">Stock Movement</text>
+    <path d="M52 320 C90 300 105 270 140 291 S195 250 230 281 S300 240 338 270 S388 230 420 242" fill="none" stroke="#1c78da" stroke-width="6"/>
+    <path d="M52 327h360" stroke="#c9dced" stroke-width="2"/><path d="M52 276h360M52 301h360" stroke="#e5eef6" stroke-width="2"/>
+    <rect x="458" y="212" width="234" height="132" rx="18" fill="#fbfdff" stroke="#d9e9f7"/><text x="478" y="243" font-size="18" font-weight="700" fill="#17385f">Top Products</text>
+    <text x="478" y="275" font-size="15" fill="#3c5874">Indomie Instant Noodles</text><text x="650" y="275" font-size="15" font-weight="700" fill="#17385f">12,450</text>
+    <text x="478" y="300" font-size="15" fill="#3c5874">Indomilk UHT</text><text x="650" y="300" font-size="15" font-weight="700" fill="#17385f">8,760</text>
+    <text x="478" y="325" font-size="15" fill="#3c5874">Sunsilk Shampoo</text><text x="650" y="325" font-size="15" font-weight="700" fill="#17385f">6,320</text>
+  </g>
+
+  <g transform="translate(875 150)" filter="url(#shadow)">
+    <rect width="595" height="170" rx="28" fill="#fff"/>
+    <text x="36" y="54" font-size="22" font-weight="700" fill="#16375f">Inventory Efficiency</text>
+    <text x="36" y="106" font-size="50" font-weight="800" fill="#18a77b">+28%</text>
+    <path d="M300 130L350 92l52 20 62-70 60 25" fill="none" stroke="#1f75d2" stroke-width="8"/>
+    <path d="M300 130h225" stroke="#bdd3e6" stroke-width="4"/>
+  </g>
+
+  <g transform="translate(900 360)" filter="url(#shadow)">
+    <rect width="300" height="180" rx="26" fill="#fff"/>
+    <circle cx="48" cy="48" r="22" fill="#e95435"/><path d="M48 34v18M48 61v4" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <text x="84" y="56" font-size="22" font-weight="800" fill="#17385f">Low Stock Alert</text>
+    <rect x="28" y="88" width="242" height="16" rx="8" fill="#e5edf5"/><rect x="28" y="88" width="156" height="16" rx="8" fill="#ff9b55"/>
+    <text x="28" y="138" font-size="18" fill="#5c7189">Reorder threshold triggered</text>
+  </g>
+
+  <g transform="translate(1240 392)" filter="url(#shadow)">
+    <rect width="230" height="150" rx="24" fill="#ffffff"/><text x="24" y="40" font-size="20" font-weight="700" fill="#17385f">Stock Controls</text>
+    <circle cx="30" cy="70" r="10" fill="#2db78a"/><text x="52" y="76" font-size="17" fill="#36516d">Stock In</text>
+    <circle cx="30" cy="101" r="10" fill="#2db78a"/><text x="52" y="107" font-size="17" fill="#36516d">Stock Out</text>
+    <circle cx="30" cy="132" r="10" fill="#2db78a"/><text x="52" y="138" font-size="17" fill="#36516d">Reorder</text>
+  </g>
+
+  <g transform="translate(820 590)">
+    <rect x="0" y="90" width="640" height="160" rx="14" fill="#d4a267"/>
+    <rect x="45" y="30" width="180" height="125" rx="10" fill="#fff0d0" stroke="#bd8f52" stroke-width="4"/>
+    <text x="68" y="82" font-size="32" font-weight="800" fill="#d5483b">Indomie</text><text x="87" y="114" font-size="17" fill="#8e5d31">MI INSTAN</text>
+    <rect x="245" y="45" width="190" height="140" rx="10" fill="#f0f6fb" stroke="#a9bfd2" stroke-width="4"/>
+    <text x="272" y="106" font-size="34" font-weight="800" fill="#1d67b4">Indomilk</text><text x="320" y="137" font-size="18" fill="#55708f">UHT</text>
+    <rect x="455" y="65" width="145" height="120" rx="10" fill="#fcebf6" stroke="#b8a1b1" stroke-width="4"/>
+    <text x="479" y="120" font-size="30" font-weight="800" fill="#8d2a86">Sunsilk</text>
+    <g transform="translate(470 -20)">
+      <rect x="0" y="0" width="105" height="46" rx="23" fill="#232323"/><rect x="95" y="8" width="52" height="30" rx="15" fill="#f6b82e"/><rect x="17" y="11" width="32" height="24" rx="10" fill="#3b7ed0"/>
+    </g>
+  </g>
+</g>
+</svg>
