@@ -237,36 +237,49 @@
 @media (max-width:900px){ #projects .project-card.project-featured { display:flex; } #projects .project-card.project-featured .project-thumb { height:auto; aspect-ratio:16/9; min-height:0; } }
 </style>
 <style id="project-thumbnail-fullbleed">
-/* Full-bleed project thumbnails: show the source image itself without blurred/padded bands. */
+/* Force every project thumbnail to fill its image area without letterboxing. */
 #projects .project-thumb-link{
   display:block;
+  width:100%;
+  aspect-ratio:16 / 9;
   line-height:0;
   overflow:hidden;
-  background:transparent;
+  background:var(--bg3);
 }
 #projects .project-thumb{
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:auto !important;
-  object-fit:initial;
-  object-position:center;
+  height:100%;
+  min-width:100%;
+  min-height:100%;
+  aspect-ratio:16 / 9 !important;
+  object-fit:cover;
+  object-position:center center;
   background:transparent;
 }
-#projects .project-card.project-featured{
-  display:flex;
-  flex-direction:column;
+#projects .project-card.project-featured .project-thumb-link{
+  width:100%;
+  aspect-ratio:16 / 9;
+  height:auto;
 }
 #projects .project-card.project-featured .project-thumb{
   width:100%;
-  height:auto;
+  height:100%;
   min-height:0;
-  aspect-ratio:auto !important;
+  aspect-ratio:16 / 9 !important;
+  object-fit:cover;
 }
 @media (max-width:900px){
+  #projects .project-thumb-link,
+  #projects .project-card.project-featured .project-thumb-link{
+    aspect-ratio:16 / 9;
+  }
+  #projects .project-thumb,
   #projects .project-card.project-featured .project-thumb{
-    height:auto;
-    min-height:0;
+    width:100%;
+    height:100%;
+    aspect-ratio:16 / 9 !important;
+    object-fit:cover;
   }
 }
 </style>
