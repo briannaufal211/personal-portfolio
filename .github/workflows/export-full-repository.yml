@@ -1,6 +1,9 @@
 name: Export Full Repository
 
 on:
+  push:
+    paths:
+      - ".github/workflows/export-full-repository.yml"
   workflow_dispatch:
 
 jobs:
