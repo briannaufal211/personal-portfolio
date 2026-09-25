@@ -236,6 +236,40 @@
 #projects .project-card.project-featured .project-body { justify-content:center; }
 @media (max-width:900px){ #projects .project-card.project-featured { display:flex; } #projects .project-card.project-featured .project-thumb { height:auto; aspect-ratio:16/9; min-height:0; } }
 </style>
+<style id="project-thumbnail-fullbleed">
+/* Full-bleed project thumbnails: show the source image itself without blurred/padded bands. */
+#projects .project-thumb-link{
+  display:block;
+  line-height:0;
+  overflow:hidden;
+  background:transparent;
+}
+#projects .project-thumb{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:auto !important;
+  object-fit:initial;
+  object-position:center;
+  background:transparent;
+}
+#projects .project-card.project-featured{
+  display:flex;
+  flex-direction:column;
+}
+#projects .project-card.project-featured .project-thumb{
+  width:100%;
+  height:auto;
+  min-height:0;
+  aspect-ratio:auto !important;
+}
+@media (max-width:900px){
+  #projects .project-card.project-featured .project-thumb{
+    height:auto;
+    min-height:0;
+  }
+}
+</style>
 </head>
 <body>
 <nav>
