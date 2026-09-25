@@ -236,92 +236,7 @@
 #projects .project-card.project-featured .project-body { justify-content:center; }
 @media (max-width:900px){ #projects .project-card.project-featured { display:flex; } #projects .project-card.project-featured .project-thumb { height:auto; aspect-ratio:16/9; min-height:0; } }
 </style>
-<style id="project-thumbnail-fullbleed">
-/* Project thumbnails: every card is filled edge-to-edge. Older PNG thumbnails contain
-   blurred padding baked into the source image; those are vertically restored/cropped
-   so only the actual artwork fills the card. */
-#projects .project-thumb-link{
-  display:block;
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 9;
-  line-height:0;
-  overflow:hidden;
-  background:var(--bg3);
-}
-#projects .project-thumb{
-  display:block;
-  width:100%;
-  height:100%;
-  min-width:100%;
-  min-height:100%;
-  aspect-ratio:16 / 9 !important;
-  object-fit:cover;
-  object-position:center;
-  background:transparent;
-}
 
-/* Exact HD thumbnails: keep the uploaded artwork intact. */
-#projects .project-thumb[src*="adidas-sales-performance"],
-#projects .project-thumb[src*="mbg-youtube-sentiment"],
-#projects .project-thumb[src*="brinv-fmcg-inventory"]{
-  width:100%;
-  height:100%;
-  aspect-ratio:16 / 9 !important;
-  object-fit:cover;
-  object-position:center;
-  transform:none;
-}
-
-/* Legacy thumbnails have blurred top/bottom bands embedded in the 1600x900 PNG.
-   Stretch vertically and crop the bands out; the central artwork then fills the
-   complete 16:9 card without creating a second blurred background. */
-#projects .project-thumb[src*="01_Hotel_Booking_Cancellation_Prediction.png"],
-#projects .project-thumb[src*="02_Telemarketing_Term_Deposit_Optimization.png"],
-#projects .project-thumb[src*="03_Airbnb_Bangkok_Pricing_Analysis.png"],
-#projects .project-thumb[src*="04_Indonesia_EV_Market_Value_Analysis.png"],
-#projects .project-thumb[src*="05_Streaming_Platform_Analytics_Dashboard.png"],
-#projects .project-thumb[src*="06_Movie_Analytics_Dashboard.png"],
-#projects .project-thumb[src*="07_OLX_Used_Cars_Market_Price_Analysis.png"],
-#projects .project-thumb[src*="08_CRUD_Inventory_Management_System.png"],
-#projects .project-thumb[src*="Telemarketing_Term_Deposit_Optimization.png"]{
-  width:100%;
-  height:203%;
-  min-width:100%;
-  min-height:203%;
-  max-width:none;
-  aspect-ratio:auto !important;
-  object-fit:fill;
-  object-position:center;
-  position:absolute;
-  left:0;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-/* Featured cards use the same full-width image treatment. */
-#projects .project-card.project-featured{
-  display:flex;
-  flex-direction:column;
-}
-#projects .project-card.project-featured .project-thumb-link{
-  width:100%;
-  aspect-ratio:16 / 9;
-  height:auto;
-}
-#projects .project-card.project-featured .project-thumb{
-  width:100%;
-  height:100%;
-  min-height:0;
-}
-
-@media (max-width:900px){
-  #projects .project-thumb-link,
-  #projects .project-card.project-featured .project-thumb-link{
-    aspect-ratio:16 / 9;
-  }
-}
-</style>
 </head>
 <body>
 <nav>
@@ -503,7 +418,7 @@
 <div class="projects-grid">
 <!-- P12: Adidas Sales Performance & Revenue Optimization -->
 <div class="project-card reveal project-order-6">
-<a aria-label="Open Adidas Sales Performance & Revenue Optimization project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Adidas-Sales-Performance-Revenue-Optimization" rel="noopener noreferrer" target="_blank"><img alt="Adidas Sales Performance & Revenue Optimization" class="project-thumb" src="assets/project-thumbnails/hd/adidas-sales-performance-revenue-optimization-exact.png?v=4"/></a>
+<a aria-label="Open Adidas Sales Performance & Revenue Optimization project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Adidas-Sales-Performance-Revenue-Optimization" rel="noopener noreferrer" target="_blank"><img alt="Adidas Sales Performance & Revenue Optimization" class="project-thumb" src="assets/project-thumbnails/hd/adidas-sales-performance-revenue-optimization.svg?v=5"/></a>
 <div class="project-thumb-placeholder" style="display:none">📈</div>
 <div class="project-body">
 <div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-eng">SQL</span></div>
