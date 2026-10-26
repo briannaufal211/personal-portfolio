@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI Job Market Copilot — project illustration</title>
+  <desc id="desc">Illustrative career intelligence dashboard with ranked job metrics, match score, coverage and skill tags. This is a designed illustration, not a captured application screenshot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10151d"/><stop offset="1" stop-color="#18232b"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00e5b0"/><stop offset="1" stop-color="#79f3d2"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1040" cy="40" r="270" fill="#00e5b0" opacity=".045"/>
+  <circle cx="1050" cy="650" r="230" fill="#ff6b4a" opacity=".035"/>
+  <rect x="42" y="34" width="1116" height="607" rx="22" fill="#131922" stroke="#303a46" stroke-width="2"/>
+  <rect x="42" y="34" width="1116" height="72" rx="22" fill="#1b232d"/>
+  <path d="M42 84 V106 H1158 V84" fill="#1b232d"/>
+  <rect x="68" y="54" width="34" height="34" rx="9" fill="url(#accent)"/>
+  <path d="M77 76 L84 61 L91 76 M80 70 H88" stroke="#102018" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="68" fill="#f1f4f1" font-family="Arial, sans-serif" font-size="21" font-weight="700">AI Job Market Copilot</text>
+  <text x="116" y="88" fill="#8d9b9c" font-family="Arial, sans-serif" font-size="11" letter-spacing="2.1">CAREER INTELLIGENCE · LOCAL AI</text>
+  <rect x="928" y="56" width="202" height="30" rx="15" fill="#15372f" stroke="#1c6e57"/>
+  <circle cx="946" cy="71" r="4" fill="#00e5b0"/>
+  <text x="960" y="75" fill="#91ecd3" font-family="Arial, sans-serif" font-size="11" font-weight="700">RULE-BASED + LOCAL LLM</text>
+  <text x="70" y="146" fill="#f1f4f1" font-family="Arial, sans-serif" font-size="25" font-weight="700">Job Match &amp; AI Insight</text>
+  <text x="70" y="171" fill="#94a0a8" font-family="Arial, sans-serif" font-size="13">Explore ranked opportunities and review evidence-based career signals.</text>
+  <rect x="70" y="195" width="335" height="110" rx="14" fill="#1d2731" stroke="#303c46"/>
+  <text x="92" y="222" fill="#97a5a9" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">RANKED JOB POSTINGS</text>
+  <text x="92" y="269" fill="#f2f5f2" font-family="Arial, sans-serif" font-size="38" font-weight="700">1,658</text>
+  <rect x="424" y="195" width="335" height="110" rx="14" fill="#1d2731" stroke="#303c46"/>
+  <text x="446" y="222" fill="#97a5a9" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">RULE-BASED FIT SIGNAL</text>
+  <text x="446" y="269" fill="#00e5b0" font-family="Arial, sans-serif" font-size="38" font-weight="700">78.9<tspan fill="#aebabb" font-size="18">/100</tspan></text>
+  <rect x="778" y="195" width="350" height="110" rx="14" fill="#1d2731" stroke="#303c46"/>
+  <text x="800" y="222" fill="#97a5a9" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">DATA COVERAGE</text>
+  <text x="800" y="269" fill="#00e5b0" font-family="Arial, sans-serif" font-size="38" font-weight="700">88.9%</text>
+  <rect x="70" y="327" width="640" height="278" rx="14" fill="#1b232d" stroke="#303c46"/>
+  <text x="94" y="360" fill="#f1f4f1" font-family="Arial, sans-serif" font-size="17" font-weight="700">Selected role</text>
+  <text x="94" y="390" fill="#00e5b0" font-family="Arial, sans-serif" font-size="12" font-weight="700">BUSINESS ANALYST</text>
+  <text x="94" y="414" fill="#a9b5b6" font-family="Arial, sans-serif" font-size="13">Purplle · Mumbai, India</text>
+  <line x1="94" y1="435" x2="684" y2="435" stroke="#35414b"/>
+  <text x="94" y="463" fill="#a2b0b1" font-family="Arial, sans-serif" font-size="12">RECORDED MATCHED SKILLS</text>
+  <g font-family="Arial, sans-serif" font-size="12" font-weight="700">
+    <rect x="94" y="478" width="58" height="29" rx="7" fill="#15372f" stroke="#27694f"/><text x="123" y="497" fill="#9aefd6" text-anchor="middle">SQL</text>
+    <rect x="160" y="478" width="92" height="29" rx="7" fill="#15372f" stroke="#27694f"/><text x="206" y="497" fill="#9aefd6" text-anchor="middle">Power BI</text>
+    <rect x="260" y="478" width="77" height="29" rx="7" fill="#15372f" stroke="#27694f"/><text x="298" y="497" fill="#9aefd6" text-anchor="middle">Tableau</text>
+    <rect x="345" y="478" width="108" height="29" rx="7" fill="#15372f" stroke="#27694f"/><text x="399" y="497" fill="#9aefd6" text-anchor="middle">Data Analysis</text>
+  </g>
+  <text x="94" y="544" fill="#a2b0b1" font-family="Arial, sans-serif" font-size="12">POTENTIAL DEVELOPMENT AREAS</text>
+  <g font-family="Arial, sans-serif" font-size="12">
+    <rect x="94" y="558" width="115" height="27" rx="7" fill="#342b20" stroke="#695034"/><text x="151" y="576" fill="#e8c68e" text-anchor="middle">Data Extraction</text>
+    <rect x="218" y="558" width="81" height="27" rx="7" fill="#342b20" stroke="#695034"/><text x="258" y="576" fill="#e8c68e" text-anchor="middle">Logistics</text>
+    <rect x="308" y="558" width="126" height="27" rx="7" fill="#342b20" stroke="#695034"/><text x="371" y="576" fill="#e8c68e" text-anchor="middle">Problem Solving</text>
+  </g>
+  <rect x="730" y="327" width="398" height="278" rx="14" fill="#1b232d" stroke="#303c46"/>
+  <text x="754" y="360" fill="#f1f4f1" font-family="Arial, sans-serif" font-size="17" font-weight="700">Local AI insight</text>
+  <rect x="754" y="379" width="110" height="25" rx="12" fill="#15372f" stroke="#27694f"/>
+  <text x="809" y="396" fill="#9aefd6" font-family="Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle">QWEN3 4B</text>
+  <text x="754" y="431" fill="#b9c4c4" font-family="Arial, sans-serif" font-size="13">• Connects recorded skills to job duties</text>
+  <text x="754" y="458" fill="#b9c4c4" font-family="Arial, sans-serif" font-size="13">• Quotes evidence from stored description</text>
+  <text x="754" y="485" fill="#b9c4c4" font-family="Arial, sans-serif" font-size="13">• Flags experience and education unknowns</text>
+  <line x1="754" y1="509" x2="1104" y2="509" stroke="#35414b"/>
+  <text x="754" y="536" fill="#00e5b0" font-family="Arial, sans-serif" font-size="12" font-weight="700">DESIGN PRINCIPLE</text>
+  <text x="754" y="559" fill="#c1cbca" font-family="Arial, sans-serif" font-size="12">Official fit score stays separate</text>
+  <text x="754" y="578" fill="#c1cbca" font-family="Arial, sans-serif" font-size="12">from LLM-generated recommendations.</text>
+  <text x="1126" y="623" fill="#7f8f92" font-family="Arial, sans-serif" font-size="10" text-anchor="end">Illustrative project graphic · not a live screenshot</text>
+</svg>
