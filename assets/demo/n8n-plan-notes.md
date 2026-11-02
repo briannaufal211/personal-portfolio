@@ -1,18 +1,52 @@
-# Catatan Rekomendasi dan Action Plan
+# Tinjauan rencana final
 
-Status: DRAF - masih ada temuan
+Status: selesai ditinjau editorial. Bukan kelulusan audit AI baru.
 
-Semua rekomendasi, peran PIC, target dan jadwal adalah usulan yang memerlukan persetujuan.
+Rancangan bersyarat belum dapat dijadwalkan dan bukan persetujuan implementasi. Audit AI terakhir belum meloloskan versi sebelumnya; seluruh revisi berikutnya ditinjau editorial tanpa panggilan API tambahan.
 
-- R001/A003 dan A010: langkah baseline serta pemeriksaan catatan tidak menetapkan secara eksplisit bagaimana menetapkan saldo awal yang dapat dipercaya ketika daftar barang belum terverifikasi. Karena sumber menyatakan tidak ada angka selisih stok terverifikasi, hasil pilot bisa hanya mengukur kelengkapan/konsistensi dokumen, bukan akurasi stok. Perjelas bahwa akurasi stok tetap belum dapat dinilai tanpa metode dan otorisasi hitung fisik; jadikan keputusan dan prosedurnya gerbang terpisah sebelum membuat klaim tentang selisih atau kecocokan stok.
-- R002/A004–A008: urutan dan gerbang pilot tidak konsisten. A005 memutuskan kesiapan dan tanggal mulai pada minggu 6, tetapi A006 baru menyetujui metode evaluasi pada minggu 7; A007 walkthrough pada minggu 8 dan pilot A008 pada minggu 9. Dengan demikian keputusan kesiapan/tanggal mendahului protokol evaluasi, dan A007 tidak menjadi prasyarat eksplisit A005. Ubah urutan agar prosedur, protokol evaluasi, dan walkthrough diselesaikan sebelum keputusan final mulai; atau batasi A005 pada kesiapan awal dan buat gerbang go/no-go final setelah A006–A007.
-- R001/A001–A005 dan R002/A006–A011: jadwal minggu 1–13 memberi kesan rencana berjangka dan berurutan yang cukup pasti, meskipun rencana menyebut kapasitas, volume, dan ketersediaan belum diketahui. Beberapa langkah memiliki durasi/effort numerik tanpa dasar volume, terutama A002–A007 dan A011. Nyatakan seluruh minggu sebagai urutan indikatif yang dapat bergeser, dan validasi effort serta kalender setelah klarifikasi kapasitas dan volume—atau hilangkan estimasi numerik yang belum dapat dipertanggungjawabkan.
-- R002/A008–A010: prosedur evaluasi berfokus pada kelengkapan dan konsistensi catatan, tetapi manfaat rekomendasi dapat terbaca sebagai evaluasi efektivitas pencatatan inventaris secara luas. Kriteria penerimaan belum mensyaratkan pembandingan terhadap saldo awal yang terverifikasi; tanpa itu, pilot tidak dapat menguji akurasi stok. Tegaskan batas kesimpulan pada indikator yang benar-benar dapat diukur, dan tambahkan prasyarat saldo awal terverifikasi hanya jika metode, otorisasi, dan kapasitasnya disetujui.
-- R001/A002: acceptance menuntut rujukan bukti untuk setiap entri daftar, tetapi sumber hanya menugaskan penyiapan daftar barang dan tidak memastikan ketersediaan bukti pendukung. Syarat ini berpotensi membuat daftar tidak dapat diterima meski tugas sumber selesai. Bedakan penerimaan daftar sebagai hasil persiapan dari status verifikasi; catat entri tanpa bukti sebagai belum terverifikasi dan jadikan metode verifikasinya keputusan lanjutan, bukan syarat yang diasumsikan dapat dipenuhi.
+## Temuan yang ditutup
+- Lingkup evaluasi eksplisit hanya kelengkapan/konsistensi dokumen; keputusan verifikasi stok terpisah di A004.
+- Protokol, validasi kasus sintetis, konflik, stop-rule dan go/no-go menjadi prasyarat minimum sebelum pilot paralel.
+- Mulai, durasi dan effort null; rancangan belum dapat dijadwalkan sampai kapasitas/estimasi/kalender disepakati A002.
+- Kriteria daftar persiapan terpisah dari verifikasi; bukti yang tidak tersedia tidak dibuat-buat.
+- Tugas Sari/Budi dan tenggat sumber independen; Rina mengoordinasikan pertemuan tanpa diasumsikan sebagai pemberi persetujuan.
+- Empat paket kerja minimum; kebutuhan fungsi dan beban divalidasi sebelum kegiatan tambahan, fungsi boleh dirangkap.
+- A004 meminta keputusan konkret kebutuhan stok fisik oleh pihak berwenang A002 saat evaluasi/penutupan.
+- Semua keputusan bisnis yang belum ada tetap dilabeli bersyarat. Review editorial tidak mengaku sebagai kelulusan audit AI.
 
-## Asumsi
-- Seluruh nama, gudang, masalah, dan tanggal dalam sumber merupakan rekaan untuk demonstrasi, bukan data klien. Rencana ini adalah usulan AI, bukan keputusan atau komitmen rapat. (F0001)
-- Minggu dihitung relatif sejak rencana disetujui, bukan tanggal kalender. Jadwal serta effort adalah estimasi usulan dan perlu disesuaikan setelah kapasitas dan volume kerja dikonfirmasi.
-- Jumlah barang, volume transaksi, kapasitas tim, baseline kelengkapan, baseline selisih stok, dan anggaran belum diketahui; rencana tidak menganggap kapasitas memadai.
-- Tugas format dan daftar barang telah disebut dalam sumber sebagai tugas rapat. Jadwal relatif dalam rencana ini tidak menggantikan tanggal yang disebut sumber. (F0006, F0007)
-- Hitung fisik stok, perubahan proses operasional, pemeriksaan sampel, dan pengadaan hanya dilakukan jika metode, dampak, kewenangan, dan persetujuannya lebih dahulu diverifikasi.
+## Protokol operasional usulan
+### mandat dan peran
+Ini usulan prosedur, belum keputusan rapat. Pemilik proses sesuai mandat organisasi diminta menunjuk pemberi keputusan dan penanggung jawab data. Sari/Budi tetap memegang tugas sumber; data kapasitas disediakan pemilik proses/petugas yang relevan. Fungsi penyusun, pengamat dan pelaksana dapat dirangkap bila layak, ditunjuk hanya bila diperlukan menurut protokol. Tidak diasumsikan telah ada penunjukan atau persetujuan. Tugas rapat dan penerimaan hasil Sari/Budi tidak bergantung pada A001; hanya aktivitas pilot tambahan memerlukan mandat tersebut.
+
+### minimum daftar
+Untuk kesiapan pilot, daftar perlu identitas yang membedakan barang (kode bila ada, nama/deskripsi bila belum), status verifikasi dan cara menandai item tidak dikenal. Pemberi keputusan mengesahkan minimum sebelum go. Daftar persiapan tetap diterima sebagai penyelesaian tugas sumber; jika minimum pilot belum terpenuhi, catat pengecualian dan tunda go. Jangan membuat kode, jumlah atau bukti fiktif.
+
+### jenis evaluasi
+Sebelum pilot pilih dan sahkan: deskriptif (tanpa baseline/target, hanya hasil teramati) atau evaluasi perbaikan (hanya jika baseline pembanding dan target tervalidasi tersedia). Baseline berarti observasi awal, bukan target sukses. Deskriptif tidak mensyaratkan baseline dan tidak menyimpulkan perbaikan/keberhasilan. Pilihan, denominator dan batas simpulan disahkan sebelum mulai.
+
+### populasi dan sampel
+Tetapkan periode, populasi transaksi yang boleh diakses, cakupan Gudang A, ukuran sampel dan metode pemilihan menurut volume aktual. Jika volume belum diketahui, kumpulkan terlebih dahulu; jangan menetapkan angka sampel rekaan. Catat periode, populasi, metode, sampel terpilih dan pengecualian. Tanpa cakupan dan metode yang disahkan, no-go.
+
+### indikator
+Kelengkapan = isian wajib terisi dibagi seluruh isian wajib pada sampel. Kolom wajib disahkan dari format sumber sebelum pilot. Konsistensi aritmetis = catatan dengan saldo sebelumnya+masuk-keluar sama dengan saldo berikutnya dibagi catatan yang dapat diuji. Catatan tak dapat diuji dilaporkan terpisah. Saldo awal belum terverifikasi; indikator ini bukan kecocokan atau akurasi stok fisik.
+
+### checklist latihan
+Sebelum latihan sahkan checklist: identifikasi item; masukkan kolom wajib; catat masuk/keluar; uji saldo aritmetis; tandai kolom kosong/item tak dikenal/saldo tak dapat diuji; log pengecualian; lakukan eskalasi. Gunakan data sintetis yang mewakili semua kasus. Lulus bila langkah dan hasil tiap kasus sesuai harapan yang disahkan, bukti dicatat, dan kesalahan kritis ditutup. Kritis = data hilang, angka salah lolos sebagai benar, konflik/akses tak sah tidak ditandai. Ini validasi prosedur, bukan pembuktian operasi nyata.
+
+### paralel dan konflik
+Pilot hanya salinan paralel, catatan resmi berjalan tetap otoritatif dan tidak ditimpa/diganti. Sebelum mulai, sahkan aturan perbandingan dan penanganan konflik: beda catatan dilog, diperiksa terhadap dokumen sumber yang diizinkan, dan diputuskan pemberi keputusan. Tidak memperbaiki catatan resmi tanpa kewenangan dan jejak perubahan; konflik yang tak terselesaikan tetap ditandai.
+
+### stop dan eskalasi
+Pertemuan A002 menetapkan penanggung jawab penghentian dan pemberi keputusan eskalasi; fungsi ini boleh dirangkap jika disahkan. Stop jika akses tak sah, data hilang, angka salah diterima benar, konflik sumber tak dapat diselesaikan, atau kapasitas/prosedur tak terpenuhi. Hentikan input pilot, simpan bukti/log tanpa mengubah sumber, beri tahu pemberi keputusan. Hanya lanjut setelah penyebab diselesaikan dan go baru dicatat.
+
+### penutupan
+A002/A003 menetapkan aturan: tutup evaluasi setelah periode/sampel disepakati tercapai dan pengecualian diklasifikasikan. Koreksi hanya berdasar sumber, diotorisasi dan dicatat. Jika data minimum tak cukup atau masalah kritis terbuka, laporan tidak konklusif; pemberi keputusan memilih perbaiki/ulang atau tutup tanpa kesimpulan. Pengulangan/perluasan bukan otomatis dan perlu keputusan terpisah. Deskriptif tidak menghasilkan klaim berhasil.
+
+### keputusan terbuka
+Register opsional sejak awal memuat tanggal mulai, sampel/target atau mode deskriptif, pertemuan berikutnya, barcode, anggaran dan kebutuhan verifikasi stok. Catat belum diputuskan serta pihak yang diminta mengonfirmasi sesuai mandat, tanpa penugasan baru tersirat. Rina hanya disebut sebagai koordinator pertemuan sesuai sumber, bukan otomatis pemberi seluruh persetujuan. Register boleh ditutup tanpa kajian/pengadaan. Setelah evaluasi, bila ada kebutuhan stok fisik, mintakan gerbang terpisah: otorisasi, metode hitung, saldo awal, kapasitas dan kriteria. Tanpa itu tidak dilakukan; risiko stok belum tertangani.
+
+### proporsionalitas
+Empat paket kerja, bukan tujuh lapis persetujuan. Rincian protokol merupakan checklist minimum sesuai risiko, bukan jabatan/tahap tambahan yang wajib. Pada A002, pemilik proses menilai kebutuhan setiap fungsi dan beban, boleh merangkap peran atau menyederhanakan prosedur tanpa menghilangkan kontrol data. Jika kapasitas tidak memadai, no-go atau lingkup dikurangi dengan keputusan tercatat.
+
+### keputusan stok
+Pada evaluasi/penutupan A004, fungsi evaluasi meminta pemberi keputusan yang ditetapkan A002 menentukan: tidak perlu verifikasi stok, perlu gerbang terpisah, atau belum dapat diputuskan. Jika perlu, belum boleh hitung fisik sebelum mandat/izin, metode, saldo awal, kapasitas dan kriteria disetujui. Pilot dokumen tidak menangani risiko akurasi stok fisik.
