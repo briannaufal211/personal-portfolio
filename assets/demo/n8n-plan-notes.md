@@ -1,0 +1,18 @@
+# Catatan Rekomendasi dan Action Plan
+
+Status: DRAF - masih ada temuan
+
+Semua rekomendasi, peran PIC, target dan jadwal adalah usulan yang memerlukan persetujuan.
+
+- R001/A003 dan A010: langkah baseline serta pemeriksaan catatan tidak menetapkan secara eksplisit bagaimana menetapkan saldo awal yang dapat dipercaya ketika daftar barang belum terverifikasi. Karena sumber menyatakan tidak ada angka selisih stok terverifikasi, hasil pilot bisa hanya mengukur kelengkapan/konsistensi dokumen, bukan akurasi stok. Perjelas bahwa akurasi stok tetap belum dapat dinilai tanpa metode dan otorisasi hitung fisik; jadikan keputusan dan prosedurnya gerbang terpisah sebelum membuat klaim tentang selisih atau kecocokan stok.
+- R002/A004–A008: urutan dan gerbang pilot tidak konsisten. A005 memutuskan kesiapan dan tanggal mulai pada minggu 6, tetapi A006 baru menyetujui metode evaluasi pada minggu 7; A007 walkthrough pada minggu 8 dan pilot A008 pada minggu 9. Dengan demikian keputusan kesiapan/tanggal mendahului protokol evaluasi, dan A007 tidak menjadi prasyarat eksplisit A005. Ubah urutan agar prosedur, protokol evaluasi, dan walkthrough diselesaikan sebelum keputusan final mulai; atau batasi A005 pada kesiapan awal dan buat gerbang go/no-go final setelah A006–A007.
+- R001/A001–A005 dan R002/A006–A011: jadwal minggu 1–13 memberi kesan rencana berjangka dan berurutan yang cukup pasti, meskipun rencana menyebut kapasitas, volume, dan ketersediaan belum diketahui. Beberapa langkah memiliki durasi/effort numerik tanpa dasar volume, terutama A002–A007 dan A011. Nyatakan seluruh minggu sebagai urutan indikatif yang dapat bergeser, dan validasi effort serta kalender setelah klarifikasi kapasitas dan volume—atau hilangkan estimasi numerik yang belum dapat dipertanggungjawabkan.
+- R002/A008–A010: prosedur evaluasi berfokus pada kelengkapan dan konsistensi catatan, tetapi manfaat rekomendasi dapat terbaca sebagai evaluasi efektivitas pencatatan inventaris secara luas. Kriteria penerimaan belum mensyaratkan pembandingan terhadap saldo awal yang terverifikasi; tanpa itu, pilot tidak dapat menguji akurasi stok. Tegaskan batas kesimpulan pada indikator yang benar-benar dapat diukur, dan tambahkan prasyarat saldo awal terverifikasi hanya jika metode, otorisasi, dan kapasitasnya disetujui.
+- R001/A002: acceptance menuntut rujukan bukti untuk setiap entri daftar, tetapi sumber hanya menugaskan penyiapan daftar barang dan tidak memastikan ketersediaan bukti pendukung. Syarat ini berpotensi membuat daftar tidak dapat diterima meski tugas sumber selesai. Bedakan penerimaan daftar sebagai hasil persiapan dari status verifikasi; catat entri tanpa bukti sebagai belum terverifikasi dan jadikan metode verifikasinya keputusan lanjutan, bukan syarat yang diasumsikan dapat dipenuhi.
+
+## Asumsi
+- Seluruh nama, gudang, masalah, dan tanggal dalam sumber merupakan rekaan untuk demonstrasi, bukan data klien. Rencana ini adalah usulan AI, bukan keputusan atau komitmen rapat. (F0001)
+- Minggu dihitung relatif sejak rencana disetujui, bukan tanggal kalender. Jadwal serta effort adalah estimasi usulan dan perlu disesuaikan setelah kapasitas dan volume kerja dikonfirmasi.
+- Jumlah barang, volume transaksi, kapasitas tim, baseline kelengkapan, baseline selisih stok, dan anggaran belum diketahui; rencana tidak menganggap kapasitas memadai.
+- Tugas format dan daftar barang telah disebut dalam sumber sebagai tugas rapat. Jadwal relatif dalam rencana ini tidak menggantikan tanggal yang disebut sumber. (F0006, F0007)
+- Hitung fisik stok, perubahan proses operasional, pemeriksaan sampel, dan pengadaan hanya dilakukan jika metode, dampak, kewenangan, dan persetujuannya lebih dahulu diverifikasi.
