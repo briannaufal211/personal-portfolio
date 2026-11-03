@@ -1,0 +1,190 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.426
+AI Meeting to Action membantu mengubah isi diskusi menjadi ringkasan dan daftar
+
+00:00:05.426 --> 00:00:06.330
+tindak lanjut.
+
+00:00:06.330 --> 00:00:11.304
+Dalam demo ini, kita memakai transkrip rapat inventaris yang seluruhnya rekaan,
+
+00:00:11.304 --> 00:00:12.661
+bukan audio pribadi.
+
+00:00:12.661 --> 00:00:16.730
+Saya akan menjelaskan alurnya dari masukan sampai dokumen hasil.
+
+00:00:18.000 --> 00:00:20.188
+Pertama, siapkan bahan diskusi.
+
+00:00:20.188 --> 00:00:23.470
+Sistem mendukung masukan audio dan teks.
+
+00:00:23.470 --> 00:00:30.033
+Khusus demo ini, masukan berupa berkas teks, sehingga tidak perlu mengubah suara
+
+00:00:30.033 --> 00:00:31.127
+menjadi transkrip.
+
+00:00:31.127 --> 00:00:36.050
+Contohnya, Sari bertugas menyiapkan format pencatatan, sedangkan Budi menyiapkan
+
+00:00:36.050 --> 00:00:37.691
+daftar barang awal.
+
+00:00:37.691 --> 00:00:41.520
+Informasi ini menjadi sumber yang harus dipertahankan.
+
+00:00:43.000 --> 00:00:48.390
+Setelah bahan dikirim, n delapan n mendaftarkan pekerjaan dan menerima nomor
+
+00:00:48.390 --> 00:00:48.880
+pekerjaan.
+
+00:00:48.880 --> 00:00:52.310
+n delapan n bertindak sebagai pengatur alur.
+
+00:00:52.310 --> 00:00:56.720
+Node berikon globe mengirim permintaan ke layanan Python lokal.
+
+00:00:56.720 --> 00:01:02.110
+Layanan inilah yang membaca berkas, memanggil model AI saat diperlukan, menyimpan
+
+00:01:02.110 --> 00:01:04.070
+hasil, dan menyiapkan dokumen.
+
+00:01:05.000 --> 00:01:10.437
+Karena pemrosesan membutuhkan waktu, alurnya tidak langsung melompat ke tahap
+
+00:01:10.437 --> 00:01:10.980
+berikutnya.
+
+00:01:10.980 --> 00:01:13.699
+Node pemeriksa membaca status pekerjaan.
+
+00:01:13.699 --> 00:01:19.679
+Jika belum selesai, node Tunggu memberi jeda, lalu status diperiksa lagi.
+
+00:01:19.679 --> 00:01:21.854
+Jika selesai, alur berlanjut.
+
+00:01:21.854 --> 00:01:27.291
+Jika terjadi kesalahan atau waktu habis, alur menuju penanganan masalah.
+
+00:01:27.291 --> 00:01:31.640
+Hasil yang tersimpan dapat dipakai saat pekerjaan dilanjutkan.
+
+00:01:33.000 --> 00:01:36.135
+Berikutnya, AI menyusun ringkasan dari transkrip.
+
+00:01:36.135 --> 00:01:40.838
+Ringkasan perlu memisahkan pokok pembahasan, keputusan, serta tugas yang
+
+00:01:40.838 --> 00:01:41.360
+disepakati.
+
+00:01:41.360 --> 00:01:45.018
+Nama penanggung jawab dan tenggat mengikuti sumber.
+
+00:01:45.018 --> 00:01:50.765
+Sebagai contoh, tanggal mulai uji coba belum disepakati, sehingga tidak boleh
+
+00:01:50.765 --> 00:01:53.900
+ditulis seolah sudah menjadi keputusan rapat.
+
+00:01:55.000 --> 00:01:59.925
+Tahap pemeriksaan membandingkan hasil dengan sumber dan mencatat temuan yang perlu
+
+00:01:59.925 --> 00:02:00.373
+diperbaiki.
+
+00:02:00.373 --> 00:02:03.507
+Tujuannya mengurangi kesimpulan yang tidak didukung transkrip.
+
+00:02:03.507 --> 00:02:07.984
+Pemeriksaan ini bukan jaminan bahwa semua keluaran AI pasti benar.
+
+00:02:07.984 --> 00:02:13.357
+Bila ada bagian yang belum jelas, status tinjauan dan catatannya tetap perlu
+
+00:02:13.357 --> 00:02:14.700
+dibaca oleh pengguna.
+
+00:02:16.000 --> 00:02:21.498
+Dari ringkasan tersebut, sistem menyusun usulan langkah kerja dan hubungan
+
+00:02:21.498 --> 00:02:22.048
+antartugas.
+
+00:02:22.048 --> 00:02:25.346
+Usulan tambahan dibedakan dari keputusan rapat.
+
+00:02:25.346 --> 00:02:30.844
+Jadwal, durasi, atau kebutuhan tenaga yang belum diketahui tidak dibuat-buat.
+
+00:02:30.844 --> 00:02:34.692
+Pada contoh ini, pembelian barcode masih usulan.
+
+00:02:34.692 --> 00:02:39.640
+Rencana tetap membutuhkan konfirmasi dan persetujuan pemilik proses sebelum
+
+00:02:39.640 --> 00:02:40.190
+dijalankan.
+
+00:02:41.000 --> 00:02:46.110
+Setelah tahapan pemrosesan, layanan Python menyiapkan dokumen sesuai keluaran yang
+
+00:02:46.110 --> 00:02:46.621
+dipilih.
+
+00:02:46.621 --> 00:02:51.730
+Word dipakai untuk membaca ringkasan, PowerPoint untuk menyampaikan hasil, dan
+
+00:02:51.730 --> 00:02:54.796
+Excel untuk meninjau rencana tindak lanjut.
+
+00:02:54.796 --> 00:02:58.884
+Pengguna kemudian membuka hasil beserta catatan kualitasnya, melakukan
+
+00:02:58.884 --> 00:03:01.950
+pemeriksaan, dan mengunduh dokumen yang dibutuhkan.
+
+00:03:03.000 --> 00:03:08.657
+Riwayat n delapan n nomor tiga lima tiga menunjukkan workflow demo benar-benar
+
+00:03:08.657 --> 00:03:09.128
+dijalankan.
+
+00:03:09.128 --> 00:03:14.314
+Status Succeeded berarti alur eksekusi selesai, bukan berarti seluruh isi otomatis
+
+00:03:14.314 --> 00:03:14.785
+disetujui.
+
+00:03:14.785 --> 00:03:17.142
+Hasil awal masih memerlukan tinjauan.
+
+00:03:17.142 --> 00:03:22.327
+Rencana yang tersedia di portofolio sudah direvisi dan diekspor ulang melalui
+
+00:03:22.327 --> 00:03:26.570
+tinjauan editorial, tanpa mengklaim audit AI terakhir telah lulus.
+
+00:03:28.000 --> 00:03:33.154
+Jadi, prinsip kerjanya adalah memisahkan pengaturan proses, pemrosesan AI, dan
+
+00:03:33.154 --> 00:03:34.185
+keputusan manusia.
+
+00:03:34.185 --> 00:03:39.855
+n delapan n menghubungkan tahap-tahapnya, AI membantu menyusun draf, lalu pengguna
+
+00:03:39.855 --> 00:03:41.917
+meninjau hasil sebelum digunakan.
+
+00:03:41.917 --> 00:03:46.040
+Tombol Try Demo menyediakan simulasi interaktif di browser.
+
+00:03:46.040 --> 00:03:51.710
+Dokumen contoh dan studi kasus tersedia untuk melihat hasilnya lebih rinci.
