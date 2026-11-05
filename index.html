@@ -7,15 +7,15 @@
 <title>Brian Naufal — Data Analyst</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --bg: #0b0c10; --bg2: #13141a; --bg3: #1c1e27;
     --accent: #00e5b0; --accent2: #ff6b4a;
-    --text: #edeae3; --text2: #9b9891; --text3: #5c5b58;
+    --text: #edeae3; --text2: #9b9891; --text3: #92949e;
     --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.12);
-    --radius: 12px; --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+    --radius: 12px; --font-head: 'Inter', system-ui, sans-serif; --font-body: 'Inter', system-ui, sans-serif;
   }
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
@@ -37,8 +37,6 @@
   #hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,229,176,0.06) 0%, transparent 70%); pointer-events: none; }
   #hero::after { content: ''; position: absolute; bottom: -100px; left: 30%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,107,74,0.04) 0%, transparent 70%); pointer-events: none; }
   .hero-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; width: 100%; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,229,176,0.08); border: 1px solid rgba(0,229,176,0.2); border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 28px; }
-  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; flex-shrink: 0; }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
   .hero-name { font-family: var(--font-head); font-size: clamp(48px, 6.5vw, 88px); font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: var(--text); margin-bottom: 24px; }
   .hero-name .line2 { color: transparent; -webkit-text-stroke: 1.5px rgba(237,234,227,0.35); }
@@ -173,68 +171,46 @@
   .project-thumb-link .project-thumb { transition: transform 0.3s ease, filter 0.3s ease; }
   .project-thumb-link:hover .project-thumb, .project-thumb-link:focus-visible .project-thumb { transform: scale(1.018); filter: brightness(1.05); }
 </style>
-<style>
-
-/* Portfolio project layout refinement */
-#projects > .container {
-  width: min(calc(100% - 48px), 1240px);
-  max-width: 1240px;
-}
-
-#projects .projects-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-#projects .projects-grid .project-card {
-  order: 100;
-}
-
-#projects .projects-grid .project-card.project-order-0 { order: 0; }\n#projects .projects-grid .project-card.project-order-1 {
-  order: 1;
-}
-#projects .projects-grid .project-card.project-order-2 {
-  order: 2;
-}
-#projects .projects-grid .project-card.project-order-3 {
-  order: 3;
-}
-#projects .projects-grid .project-card.project-order-4 {
-  order: 4;
-}
-#projects .projects-grid .project-card.project-order-5 {
-  order: 5;
-}
-
-#projects .projects-grid .project-card.project-featured {
-  grid-column: 1 / -1;
-}
-
-@media (max-width: 900px) {
-  #projects .projects-grid {
-    grid-template-columns: 1fr;
+<style id="portfolio-refinement">
+  body { -webkit-font-smoothing: antialiased; }
+  .hero-name { line-height: 1.08; letter-spacing: -0.055em; }
+  .hero-tagline { font-weight: 400; }
+  .section-title, .contact-headline { letter-spacing: -0.04em; line-height: 1.18; }
+  .project-title { font-size: 19px; line-height: 1.4; letter-spacing: -0.025em; }
+  .project-desc, .skill-desc, .edu-desc { font-size: 14px; line-height: 1.75; }
+  #projects .container { max-width: 1200px; }
+  .projects-header { margin-bottom: 28px; }
+  .projects-intro { max-width: 640px; margin-top: 16px; color: var(--text2); font-size: 15px; }
+  .project-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+  .project-filter { font: 500 13px/1.5 var(--font-body); color: var(--text2); background: var(--bg2); border: 1px solid var(--border2); border-radius: 999px; padding: 10px 17px; cursor: pointer; transition: background .2s, color .2s; }
+  .project-filter:hover { color: var(--text); border-color: var(--accent); }
+  .project-filter[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .project-filter:focus-visible, .project-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .filter-count { opacity: .7; margin-left: 5px; font-size: 12px; }
+  .projects-result { font-size: 13px; color: var(--text2); margin-bottom: 32px; }
+  .project-group + .project-group { margin-top: 56px; }
+  .project-group-title { font: 700 24px/1.3 var(--font-head); letter-spacing: -.03em; margin-bottom: 8px; }
+  .project-group-intro { font-size: 14px; color: var(--text2); margin-bottom: 24px; }
+  #projects .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+  .project-body { padding: 24px; min-width: 0; }
+  .project-insight { font-style: normal; line-height: 1.65; }
+  .project-footer { align-items: flex-start; gap: 16px; }
+  .project-links { flex-wrap: wrap; flex-shrink: 1; gap: 10px 16px; }
+  .project-thumb-link { overflow: hidden; }
+  .project-thumb { aspect-ratio: 16/9; object-fit: cover; }
+  .badge { font-size: 11px; font-weight: 600; text-transform: none; letter-spacing: 0; }
+  .project-card[hidden], .project-group[hidden] { display: none; }
+  @media (max-width: 700px) {
+    #projects .projects-grid { grid-template-columns: minmax(0, 1fr); }
+    .project-body { padding: 20px; }
+    .project-filter { padding: 9px 13px; }
+    .projects-header { align-items: flex-start; }
   }
-  #projects .projects-grid .project-card.project-featured {
-    grid-column: auto;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
   }
-}
-
-@media (max-width: 580px) {
-  #projects > .container {
-    width: min(calc(100% - 32px), 1240px);
-  }
-}
-
-</style>
-
-<style id="hd-thumbnail-refinement">
-/* HD project thumbnail refinement */
-#projects .project-thumb { width:100%; aspect-ratio:16/9; object-fit:cover; image-rendering:auto; background:#0e151f; }
-#projects .project-card.project-featured { display:grid; grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr); }
-#projects .project-card.project-featured .project-thumb { height:100%; aspect-ratio:auto; min-height:360px; }
-#projects .project-card.project-featured .project-body { justify-content:center; }
-@media (max-width:900px){ #projects .project-card.project-featured { display:flex; } #projects .project-card.project-featured .project-thumb { height:auto; aspect-ratio:16/9; min-height:0; } }
 </style>
 
 </head>
@@ -254,7 +230,6 @@
 <div class="container">
 <div class="hero-inner">
 <div>
-<div class="hero-tag">Open to full-time opportunities</div>
 <h1 class="hero-name">
 <span>Brian</span><br/>
 <span class="line2">Naufal</span>
@@ -406,42 +381,30 @@
 <section id="projects">
 <div class="container">
 <div class="projects-header">
-<div>
-<p class="section-label reveal">Work Showcase</p>
-<h2 class="section-title reveal">Selected Projects</h2>
+<div><p class="section-label">Work Showcase</p><h2 class="section-title">Projects</h2>
+<p class="projects-intro">Explore business insights, predictive models, interactive dashboards, and practical AI applications.</p></div>
+<a class="btn-secondary" href="https://github.com/briannaufal211" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
 </div>
-<a class="btn-secondary reveal" href="https://github.com/briannaufal211" style="font-size:13px;padding:10px 20px;margin-bottom:0;" target="_blank">
-        View All on GitHub
-        <svg fill="none" height="12" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="12"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-</a>
+<div class="project-filters" role="group" aria-label="Filter projects by category">
+<button class="project-filter" type="button" data-filter="all" aria-pressed="true" aria-controls="project-collection">All Projects<span class="filter-count">12</span></button>
+<button class="project-filter" type="button" data-filter="analytics" aria-pressed="false" aria-controls="project-collection">Data Analytics<span class="filter-count">8</span></button>
+<button class="project-filter" type="button" data-filter="science" aria-pressed="false" aria-controls="project-collection">Data Science<span class="filter-count">4</span></button>
+<button class="project-filter" type="button" data-filter="dashboards" aria-pressed="false" aria-controls="project-collection">Dashboards<span class="filter-count">6</span></button>
+<button class="project-filter" type="button" data-filter="ai" aria-pressed="false" aria-controls="project-collection">Applied AI<span class="filter-count">2</span></button>
+<button class="project-filter" type="button" data-filter="automation" aria-pressed="false" aria-controls="project-collection">Software & Automation<span class="filter-count">2</span></button>
 </div>
+<p class="projects-result" id="projects-result" role="status" aria-live="polite">Showing all 12 projects</p>
+<div id="project-collection">
+<div class="project-group" aria-labelledby="top-projects-title">
+<h3 class="project-group-title" id="top-projects-title">Top Projects</h3>
+<p class="project-group-intro">Four selected projects across analytics, data science, dashboards, and applied AI.</p>
 <div class="projects-grid">
-<!-- AI Meeting-to-Action -->
-<div class="project-card reveal" style="order:-1">
-<a class="project-thumb-link" href="ai-meeting-to-action.html" aria-label="Read AI Meeting-to-Action case study"><img class="project-thumb" src="assets/project-thumbnails/ai-meeting-to-action-cover.webp" alt="Illustration of the AI Meeting-to-Action workflow: n8n and Python turn audio and transcripts into Word, PowerPoint and Excel" width="1672" height="941" style="height:auto" loading="lazy" decoding="async"></a>
-<div class="project-body"><div class="project-badges"><span class="badge badge-eng">Automation</span><span class="badge badge-ml">Applied AI</span></div><h3 class="project-title">AI Meeting-to-Action</h3><p class="project-desc">Built a locally hosted Python and n8n workflow that turns recordings or transcripts into readable dialogue, Word summaries, and optional editable presentations and Excel action plans.</p><div class="project-insight"><strong>Key Design Decision:</strong> Source-linked evidence, visible review flags, resumable stages and cost controls keep generated outputs reviewable.</div><div class="project-footer"><div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">FastAPI</span><span class="tool-pill">n8n</span><span class="tool-pill">OpenAI API</span></div><div class="project-links"><a class="project-link" href="demo.html">Try Demo ↗</a><a class="project-link" href="watch-demo.html">Watch Demo ▶</a><a class="project-link" href="ai-meeting-to-action.html">Case Study ↗</a><a class="project-link" href="https://github.com/briannaufal211/AI-Meeting-to-Action" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a><a class="project-link" href="assets/project-documents/AI-Meeting-to-Action_LinkedIn.pdf" target="_blank" rel="noopener noreferrer">PDF Showcase ↗</a></div></div></div></div>
-<!-- P14: AI Job Market Copilot -->
-<div class="project-card reveal project-order-0">
-<a aria-label="Open AI Job Market Copilot case study" class="project-thumb-link" href="ai-job-market-copilot.html"><img alt="AI Job Market Copilot dashboard thumbnail" class="project-thumb" src="assets/project-thumbnails/ai-job-market-copilot-hd.webp?v=2"/></a>
-<div class="project-thumb-placeholder" style="display:none">🎯</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-ml">Local AI</span></div>
-<h3 class="project-title">AI Job Market Copilot</h3>
-<p class="project-desc">Built a local-first career intelligence prototype that explores 1,658 ranked job postings, presents rule-based fit and skill-gap signals, and generates contextual career insights with Ollama and Qwen3 4B.</p>
-<div class="project-insight"><strong>Key Design Decision:</strong> <span>The official fit score remains separate from LLM-generated suggestions. Missing or heuristic requirements are surfaced for verification rather than treated as confirmed eligibility.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Pandas</span><span class="tool-pill">Streamlit</span><span class="tool-pill">Ollama</span><span class="tool-pill">Qwen3 4B</span></div>
-<div class="project-links"><a aria-label="Open AI Job Market Copilot live demo" class="project-link" href="https://refinery-tableware-skintight.ngrok-free.dev" rel="noopener noreferrer" target="_blank" style="color:var(--accent)">Live Demo <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a><a class="project-link" href="ai-job-market-copilot.html">Case Study <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a><a aria-label="View AI Job Market Copilot source code on GitHub" class="project-link" href="https://github.com/briannaufal211/AI-Job-Market-Copilot" rel="noopener noreferrer" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a></div>
-</div>
-</div>
-</div>
-<!-- P12: Adidas Sales Performance & Revenue Optimization -->
-<div class="project-card reveal project-order-6">
+<div class="project-card reveal" data-tags="analytics">
 <a aria-label="Open Adidas Sales Performance & Revenue Optimization project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Adidas-Sales-Performance-Revenue-Optimization" rel="noopener noreferrer" target="_blank"><img alt="Adidas Sales Performance & Revenue Optimization" class="project-thumb" src="assets/project-thumbnails/hd/adidas-sales-performance-revenue-optimization-exact.png?v=8"/></a>
 <div class="project-thumb-placeholder" style="display:none">📈</div>
 <div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-eng">SQL</span></div>
-<h3 class="project-title">Adidas Sales Performance &amp; Revenue Optimization</h3>
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span></div>
+<h4 class="project-title">Adidas Sales Performance &amp; Revenue Optimization</h4>
 <p class="project-desc">Built an end-to-end MySQL sales analytics case study to evaluate revenue, profitability, product, regional, retailer, and sales-method performance — from raw-data validation through executive reporting.</p>
 <div class="project-insight"><strong>Key Insight:</strong> <span>Revenue increased 294.2% in 2021, while the West region led revenue but had the lowest regional margin. Men's Street Footwear was the largest product contributor, and an evidence-based screen flagged 8 product-region combinations for further investigation.</span></div>
 <div class="project-footer">
@@ -450,28 +413,12 @@
 </div>
 </div>
 </div>
-<!-- P1: Airbnb Bangkok featured -->
-<div class="project-card reveal project-order-3">
-<a aria-label="Open Airbnb Bangkok — Listing &amp; Pricing Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/AIRBNB-Listing-Bangkok-Project" rel="noopener noreferrer" target="_blank"><img alt="Airbnb Bangkok" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/03_Airbnb_Bangkok_Pricing_Analysis.png"/></a>
-<div class="project-thumb-placeholder" style="display:none">🏠</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-da">Dashboard</span></div>
-<h3 class="project-title">Airbnb Bangkok — Listing &amp; Pricing Analysis</h3>
-<p class="project-desc">Analyzed 15,000+ Bangkok listings to identify pricing drivers, high-demand neighborhoods, and occupancy patterns. Delivered a Tableau dashboard enabling hosts to benchmark performance and optimize pricing strategy.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>Review count is the strongest occupancy predictor — listings with more reviews show lower availability (higher occupancy). Pathum Wan &amp; Nong Chok emerged as premium areas with the highest median prices, while Entire Home/Apartment demonstrated the most stable price and occupancy performance.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Pandas</span><span class="tool-pill">Tableau</span><span class="tool-pill">EDA</span></div>
-<a class="project-link" href="https://github.com/briannaufal211/AIRBNB-Listing-Bangkok-Project" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-</div>
-</div>
-</div>
-<!-- P13: Makan Bergizi Gratis (MBG): YouTube Sentiment Analysis, Text Mining & Discussion Pattern Analysis -->
-<div class="project-card reveal project-order-0">
+<div class="project-card reveal" data-tags="science">
 <a aria-label="Open Makan Bergizi Gratis (MBG): YouTube Sentiment Analysis, Text Mining &amp; Discussion Pattern Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/mbg-youtube-sentiment-analysis" rel="noopener noreferrer" target="_blank"><img alt="Makan Bergizi Gratis (MBG): YouTube Sentiment Analysis, Text Mining &amp; Discussion Pattern Analysis" class="project-thumb" src="assets/project-thumbnails/hd/mbg-youtube-sentiment-exact.webp?v=8"/></a>
 <div class="project-thumb-placeholder" style="display:none">💬</div>
 <div class="project-body">
-<div class="project-badges"><span class="badge badge-ml">NLP / Machine Learning</span><span class="badge badge-da">Text Mining</span></div>
-<h3 class="project-title">Makan Bergizi Gratis (MBG): YouTube Sentiment Analysis, Text Mining &amp; Discussion Pattern Analysis</h3>
+<div class="project-badges"><span class="badge badge-ml">Data Science</span></div>
+<h4 class="project-title">Makan Bergizi Gratis (MBG): YouTube Sentiment Analysis, Text Mining &amp; Discussion Pattern Analysis</h4>
 <p class="project-desc">Analyzed 12,000 Indonesian YouTube comments related to MBG through data-quality control, duplicate-leakage prevention, sentiment classification, model benchmarking, explainability, and conservative coordination-pattern screening.</p>
 <div class="project-insight"><strong>Key Insight:</strong> <span>TF-IDF + Logistic Regression achieved validation Macro F1 of 0.758 and test Macro F1 of 0.724, while the coordination extension retained 4 repeated-text patterns for descriptive review and 0 strict multi-signal commenter candidates.</span></div>
 <div class="project-footer">
@@ -480,73 +427,12 @@
 </div>
 </div>
 </div>
-<!-- P2: Hotel Booking -->
-<div class="project-card reveal project-order-1 project-featured">
-<a aria-label="Open Hotel Booking Cancellation Prediction project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Hotel-Booking-Demand-Prediction/tree/main" rel="noopener noreferrer" target="_blank"><img alt="Hotel Booking" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/01_Hotel_Booking_Cancellation_Prediction.png"/></a>
-<div class="project-thumb-placeholder" style="display:none">🏨</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-ml">Machine Learning</span><span class="badge badge-da">Predictive</span></div>
-<h3 class="project-title">Hotel Booking Cancellation Prediction</h3>
-<p class="project-desc">Built an XGBoost classification model to predict booking cancellations, enabling proactive revenue management and inventory planning for hospitality teams.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>Bookings with Non-Refund Deposit are significantly less likely to be cancelled, while customers with a high cancellation history carry the greatest risk of cancelling again. More special requests correlate with lower cancellation likelihood. Model optimized for Recall &amp; F1-Score — top features: Deposit Type, Previous Cancellations, Market Segment.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">XGBoost</span><span class="tool-pill">Scikit-learn</span></div>
-<a class="project-link" href="https://github.com/briannaufal211/Hotel-Booking-Demand-Prediction/tree/main" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-</div>
-</div>
-</div>
-<!-- P3: OLX -->
-<div class="project-card reveal project-order-100">
-<a aria-label="Open OLX Used Cars — Market Price Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/OLX-Used-Cars-Scraper" rel="noopener noreferrer" target="_blank"><img alt="OLX Used Cars" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/07_OLX_Used_Cars_Market_Price_Analysis.png"/></a>
-<div class="project-thumb-placeholder" style="display:none">🚗</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Web Scraping</span><span class="badge badge-da">EDA</span></div>
-<h3 class="project-title">OLX Used Cars — Market Price Analysis</h3>
-<p class="project-desc">Scraped 5,000+ used car listings from OLX Indonesia to analyze depreciation curves, brand-specific pricing, and mileage impact on resale value.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>Toyota dominates the Jakarta used car market in both listing frequency and model variety, reflecting strong brand trust in Indonesia. Ridge Regression achieved the best performance (Test RMSE: 144M IDR) with optimal generalization, while tree-based models suffered from overfitting on this heterogeneous dataset.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">BeautifulSoup</span><span class="tool-pill">Pandas</span></div>
-<a class="project-link" href="https://github.com/briannaufal211/OLX-Used-Cars-Scraper" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-</div>
-</div>
-</div>
-<!-- P4: CRUD -->
-<div class="project-card reveal project-order-100">
-<a aria-label="Open BrINV — FMCG Inventory Management System project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/CRUD-Inventory-System-Project" rel="noopener noreferrer" target="_blank"><img alt="BrINV — FMCG Inventory Management System" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/hd/brinv-fmcg-inventory-exact.webp"/></a>
-<div class="project-thumb-placeholder" style="display:none">📦</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Business Analysis</span><span class="badge badge-eng">Python</span></div>
-<h3 class="project-title">BrINV — FMCG Inventory Management System</h3>
-<p class="project-desc">Built a Python-based inventory management simulation for FMCG warehouse operations, covering CRUD, product and batch traceability, inventory valuation, low-stock monitoring, and local data persistence.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>Maps a simplified warehouse workflow into functional requirements, validation controls, operational KPIs, and inventory actions — bridging software implementation with business-process thinking.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">JSON</span><span class="tool-pill">CRUD</span><span class="tool-pill">Process Analysis</span></div>
-<a class="project-link" href="https://github.com/briannaufal211/CRUD-Inventory-System-Project" target="_blank">GitHub <svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-</div>
-</div>
-</div>
-<!-- P5: Movie Analytics Dashboard -->
-<div class="project-card reveal project-order-100">
-<a aria-label="Open Movie Analytics Dashboard (OMDB API) project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/imdb-movie-analytics-dashboard" rel="noopener noreferrer" target="_blank"><img alt="Movie Analytics Dashboard (OMDB API)" class="project-thumb" src="assets/project-thumbnails/06_Movie_Analytics_Dashboard.png"/></a>
-<div class="project-thumb-placeholder" style="display:none">🎬</div>
-<div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-da">Dashboard</span></div>
-<h3 class="project-title">Movie Analytics Dashboard (OMDB API)</h3>
-<p class="project-desc">Built a fully automated movie analytics pipeline using the OMDB public API — ingesting data into BigQuery and visualizing genre trends, ratings distribution, and box office patterns via a Looker Studio dashboard.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>An automated data pipeline was built from OMDB Public API → BigQuery → Looker Studio, demonstrating end-to-end data engineering capability. The executive dashboard surfaces genre trends, IMDb rating distributions, and movie performance by release year.</span></div>
-<div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">REST API</span><span class="tool-pill">BigQuery</span><span class="tool-pill">Looker Studio</span></div>
-<a class="project-link" href="https://github.com/briannaufal211/imdb-movie-analytics-dashboard" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-</div>
-</div>
-</div>
-<!-- P9: Indonesia EV Market -->
-<div class="project-card reveal project-order-4">
+<div class="project-card reveal" data-tags="analytics dashboards">
 <a aria-label="Open Indonesia EV Market &amp; Value Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/indonesia-ev-powerbi-dashboard" rel="noopener noreferrer" target="_blank"><img alt="Indonesia EV Market &amp; Value Analysis" class="project-thumb" src="assets/project-thumbnails/04_Indonesia_EV_Market_Value_Analysis.png"/></a>
 <div class="project-thumb-placeholder" style="display:none">🔋</div>
 <div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-da">Dashboard</span></div>
-<h3 class="project-title">Indonesia EV Market &amp; Value Analysis</h3>
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">Indonesia EV Market &amp; Value Analysis</h4>
 <p class="project-desc">Built an interactive Power BI dashboard comparing electric vehicle models sold in Indonesia across price, driving range, battery capacity, motor power, and charging time — with an interactive budget-fit simulation.</p>
 <div class="project-insight"><strong>Key Insight:</strong> <span>A value-for-money metric surfaces which EVs offer the strongest range per rupiah, while the budget simulation page lets users instantly filter eligible models under a chosen price ceiling — turning fragmented specs into a single decision-support view.</span></div>
 <div class="project-footer">
@@ -555,13 +441,79 @@
 </div>
 </div>
 </div>
-<!-- P10: Streaming Platform Analytics -->
-<div class="project-card reveal project-order-5">
+<div class="project-card reveal" data-tags="ai automation">
+<a class="project-thumb-link" href="ai-meeting-to-action.html" aria-label="Read AI Meeting-to-Action case study"><img class="project-thumb" src="assets/project-thumbnails/ai-meeting-to-action-cover.webp" alt="Illustration of the AI Meeting-to-Action workflow: n8n and Python turn audio and transcripts into Word, PowerPoint and Excel" width="1672" height="941" style="height:auto" loading="lazy" decoding="async"></a>
+<div class="project-body"><div class="project-badges"><span class="badge badge-ml">Applied AI</span><span class="badge badge-eng">Software & Automation</span></div><h4 class="project-title">AI Meeting-to-Action</h4><p class="project-desc">Built a locally hosted Python and n8n workflow that turns recordings or transcripts into readable dialogue, Word summaries, and optional editable presentations and Excel action plans.</p><div class="project-insight"><strong>Key Design Decision:</strong> Source-linked evidence, visible review flags, resumable stages and cost controls keep generated outputs reviewable.</div><div class="project-footer"><div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">FastAPI</span><span class="tool-pill">n8n</span><span class="tool-pill">OpenAI API</span></div><div class="project-links"><a class="project-link" href="demo.html">Try Demo ↗</a><a class="project-link" href="watch-demo.html">Watch Demo ▶</a><a class="project-link" href="ai-meeting-to-action.html">Case Study ↗</a><a class="project-link" href="https://github.com/briannaufal211/AI-Meeting-to-Action" target="_blank" rel="noopener noreferrer">GitHub Repo ↗</a><a class="project-link" href="assets/project-documents/AI-Meeting-to-Action_LinkedIn.pdf" target="_blank" rel="noopener noreferrer">PDF Showcase ↗</a></div></div></div></div>
+</div>
+</div>
+<div class="project-group" aria-labelledby="more-projects-title">
+<h3 class="project-group-title" id="more-projects-title">More Projects</h3>
+<p class="project-group-intro">More work in data exploration, machine learning, and software automation.</p>
+<div class="projects-grid">
+<div class="project-card reveal" data-tags="analytics ai dashboards">
+<a aria-label="Open AI Job Market Copilot case study" class="project-thumb-link" href="ai-job-market-copilot.html"><img alt="AI Job Market Copilot dashboard thumbnail" class="project-thumb" src="assets/project-thumbnails/ai-job-market-copilot-hd.webp?v=2"/></a>
+<div class="project-thumb-placeholder" style="display:none">🎯</div>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-ml">Applied AI</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">AI Job Market Copilot</h4>
+<p class="project-desc">Built a local-first career intelligence prototype that explores 1,658 ranked job postings, presents rule-based fit and skill-gap signals, and generates contextual career insights with Ollama and Qwen3 4B.</p>
+<div class="project-insight"><strong>Key Design Decision:</strong> <span>The official fit score remains separate from LLM-generated suggestions. Missing or heuristic requirements are surfaced for verification rather than treated as confirmed eligibility.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Pandas</span><span class="tool-pill">Streamlit</span><span class="tool-pill">Ollama</span><span class="tool-pill">Qwen3 4B</span></div>
+<div class="project-links"><a aria-label="Open AI Job Market Copilot live demo" class="project-link" href="https://refinery-tableware-skintight.ngrok-free.dev" rel="noopener noreferrer" target="_blank" style="color:var(--accent)">Live Demo <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a><a class="project-link" href="ai-job-market-copilot.html">Case Study <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a><a aria-label="View AI Job Market Copilot source code on GitHub" class="project-link" href="https://github.com/briannaufal211/AI-Job-Market-Copilot" rel="noopener noreferrer" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a></div>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="analytics dashboards">
+<a aria-label="Open Airbnb Bangkok — Listing &amp; Pricing Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/AIRBNB-Listing-Bangkok-Project" rel="noopener noreferrer" target="_blank"><img alt="Airbnb Bangkok" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/03_Airbnb_Bangkok_Pricing_Analysis.png"/></a>
+<div class="project-thumb-placeholder" style="display:none">🏠</div>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">Airbnb Bangkok — Listing &amp; Pricing Analysis</h4>
+<p class="project-desc">Analyzed 15,000+ Bangkok listings to identify pricing drivers, high-demand neighborhoods, and occupancy patterns. Delivered a Tableau dashboard enabling hosts to benchmark performance and optimize pricing strategy.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>Review count is the strongest occupancy predictor — listings with more reviews show lower availability (higher occupancy). Pathum Wan &amp; Nong Chok emerged as premium areas with the highest median prices, while Entire Home/Apartment demonstrated the most stable price and occupancy performance.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Pandas</span><span class="tool-pill">Tableau</span><span class="tool-pill">EDA</span></div>
+<a class="project-link" href="https://github.com/briannaufal211/AIRBNB-Listing-Bangkok-Project" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="science">
+<a aria-label="Open Hotel Booking Cancellation Prediction project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Hotel-Booking-Demand-Prediction/tree/main" rel="noopener noreferrer" target="_blank"><img alt="Hotel Booking" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/01_Hotel_Booking_Cancellation_Prediction.png"/></a>
+<div class="project-thumb-placeholder" style="display:none">🏨</div>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-ml">Data Science</span></div>
+<h4 class="project-title">Hotel Booking Cancellation Prediction</h4>
+<p class="project-desc">Built an XGBoost classification model to predict booking cancellations, enabling proactive revenue management and inventory planning for hospitality teams.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>Bookings with Non-Refund Deposit are significantly less likely to be cancelled, while customers with a high cancellation history carry the greatest risk of cancelling again. More special requests correlate with lower cancellation likelihood. Model optimized for Recall &amp; F1-Score — top features: Deposit Type, Previous Cancellations, Market Segment.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">XGBoost</span><span class="tool-pill">Scikit-learn</span></div>
+<a class="project-link" href="https://github.com/briannaufal211/Hotel-Booking-Demand-Prediction/tree/main" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="analytics science dashboards">
+<a aria-label="Open Optimizing Telemarketing for Term Deposit Subscriptions project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Optimizing-Telemarketing-for-Term-Deposit-Subscriptions" rel="noopener noreferrer" target="_blank"><img alt="Telemarketing Term Deposit" class="project-thumb" src="assets/project-thumbnails/02_Telemarketing_Term_Deposit_Optimization.png"/></a>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-ml">Data Science</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">Optimizing Telemarketing for Term Deposit Subscriptions</h4>
+<p class="project-desc">Analyzed a bank's telemarketing campaign dataset to predict which customers are most likely to subscribe to a term deposit. Combined EDA, Logistic Regression, and a live Streamlit app — enabling sales teams to prioritize high-conversion leads and reduce wasted call volume.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>Previous campaign outcome (poutcome) is the strongest conversion predictor — customers with a positive history have a significantly higher subscription probability. Contact timing &amp; channel also have substantial impact, while demographic factors play a smaller role. The model helps telemarketing teams prioritize high-value prospects and reduce campaign costs.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Scikit-learn</span><span class="tool-pill">Logistic Regression</span><span class="tool-pill">Tableau</span><span class="tool-pill">Streamlit</span></div>
+<div class="project-links">
+<a class="project-link" href="https://bank-term-deposit-appapp-yjgtwqybxc9cwokvtqhqvr.streamlit.app/" style="color:var(--accent)" target="_blank">Live App <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+<a class="project-link" href="https://github.com/briannaufal211/Optimizing-Telemarketing-for-Term-Deposit-Subscriptions" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="analytics dashboards">
 <a aria-label="Open Streaming Platform Analytics Dashboard project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/streaming-platform-powerbi-dashboard" rel="noopener noreferrer" target="_blank"><img alt="Streaming Platform Analytics Dashboard" class="project-thumb" src="assets/project-thumbnails/05_Streaming_Platform_Analytics_Dashboard.png"/></a>
 <div class="project-thumb-placeholder" style="display:none">📺</div>
 <div class="project-body">
-<div class="project-badges"><span class="badge badge-da">Data Analysis</span><span class="badge badge-da">Dashboard</span></div>
-<h3 class="project-title">Streaming Platform Analytics Dashboard</h3>
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">Streaming Platform Analytics Dashboard</h4>
 <p class="project-desc">Designed a Power BI dashboard turning streaming-activity data into insight on user engagement, content performance, package tiers, and regional behavior — from a national overview down to province-level drill-down.</p>
 <div class="project-insight"><strong>Key Insight:</strong> <span>A dedicated province drill-down page lets stakeholders move from a national overview straight into local content, package, and demographic trends for any selected province, closing the gap between headline KPIs and regional decision-making.</span></div>
 <div class="project-footer">
@@ -570,21 +522,46 @@
 </div>
 </div>
 </div>
-<!-- P11: IMDb Movie Analytics -->
-
-<!-- P8: Telemarketing featured -->
-<div class="project-card reveal project-order-2">
-<a aria-label="Open Optimizing Telemarketing for Term Deposit Subscriptions project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/Optimizing-Telemarketing-for-Term-Deposit-Subscriptions" rel="noopener noreferrer" target="_blank"><img alt="Telemarketing Term Deposit" class="project-thumb" src="assets/project-thumbnails/02_Telemarketing_Term_Deposit_Optimization.png"/></a>
+<div class="project-card reveal" data-tags="analytics dashboards">
+<a aria-label="Open Movie Analytics Dashboard (OMDB API) project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/imdb-movie-analytics-dashboard" rel="noopener noreferrer" target="_blank"><img alt="Movie Analytics Dashboard (OMDB API)" class="project-thumb" src="assets/project-thumbnails/06_Movie_Analytics_Dashboard.png"/></a>
+<div class="project-thumb-placeholder" style="display:none">🎬</div>
 <div class="project-body">
-<div class="project-badges"><span class="badge badge-ml">Machine Learning</span><span class="badge badge-da">Business Analysis</span></div>
-<h3 class="project-title">Optimizing Telemarketing for Term Deposit Subscriptions</h3>
-<p class="project-desc">Analyzed a bank's telemarketing campaign dataset to predict which customers are most likely to subscribe to a term deposit. Combined EDA, Logistic Regression, and a live Streamlit app — enabling sales teams to prioritize high-conversion leads and reduce wasted call volume.</p>
-<div class="project-insight"><strong>Key Insight:</strong> <span>Previous campaign outcome (poutcome) is the strongest conversion predictor — customers with a positive history have a significantly higher subscription probability. Contact timing &amp; channel also have substantial impact, while demographic factors play a smaller role. The model helps telemarketing teams prioritize high-value prospects and reduce campaign costs.</span></div>
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-da">Dashboards</span></div>
+<h4 class="project-title">Movie Analytics Dashboard (OMDB API)</h4>
+<p class="project-desc">Built a fully automated movie analytics pipeline using the OMDB public API — ingesting data into BigQuery and visualizing genre trends, ratings distribution, and box office patterns via a Looker Studio dashboard.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>An automated data pipeline was built from OMDB Public API → BigQuery → Looker Studio, demonstrating end-to-end data engineering capability. The executive dashboard surfaces genre trends, IMDb rating distributions, and movie performance by release year.</span></div>
 <div class="project-footer">
-<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">Scikit-learn</span><span class="tool-pill">Logistic Regression</span><span class="tool-pill">Tableau</span><span class="tool-pill">Streamlit</span></div>
-<div class="project-links">
-<a class="project-link" href="https://bank-term-deposit-appapp-yjgtwqybxc9cwokvtqhqvr.streamlit.app/" style="color:var(--accent)" target="_blank">Live App <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-<a class="project-link" href="https://github.com/briannaufal211/Optimizing-Telemarketing-for-Term-Deposit-Subscriptions" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">REST API</span><span class="tool-pill">BigQuery</span><span class="tool-pill">Looker Studio</span></div>
+<a class="project-link" href="https://github.com/briannaufal211/imdb-movie-analytics-dashboard" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="analytics science">
+<a aria-label="Open OLX Used Cars — Market Price Analysis project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/OLX-Used-Cars-Scraper" rel="noopener noreferrer" target="_blank"><img alt="OLX Used Cars" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/07_OLX_Used_Cars_Market_Price_Analysis.png"/></a>
+<div class="project-thumb-placeholder" style="display:none">🚗</div>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-da">Data Analytics</span><span class="badge badge-ml">Data Science</span></div>
+<h4 class="project-title">OLX Used Cars — Market Price Analysis</h4>
+<p class="project-desc">Scraped 5,000+ used car listings from OLX Indonesia to analyze depreciation curves, brand-specific pricing, and mileage impact on resale value.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>Toyota dominates the Jakarta used car market in both listing frequency and model variety, reflecting strong brand trust in Indonesia. Ridge Regression achieved the best performance (Test RMSE: 144M IDR) with optimal generalization, while tree-based models suffered from overfitting on this heterogeneous dataset.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">BeautifulSoup</span><span class="tool-pill">Pandas</span></div>
+<a class="project-link" href="https://github.com/briannaufal211/OLX-Used-Cars-Scraper" target="_blank">GitHub <svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
+</div>
+</div>
+<div class="project-card reveal" data-tags="automation">
+<a aria-label="Open BrINV — FMCG Inventory Management System project on GitHub" class="project-thumb-link" href="https://github.com/briannaufal211/CRUD-Inventory-System-Project" rel="noopener noreferrer" target="_blank"><img alt="BrINV — FMCG Inventory Management System" class="project-thumb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" src="assets/project-thumbnails/hd/brinv-fmcg-inventory-exact.webp"/></a>
+<div class="project-thumb-placeholder" style="display:none">📦</div>
+<div class="project-body">
+<div class="project-badges"><span class="badge badge-eng">Software & Automation</span></div>
+<h4 class="project-title">BrINV — FMCG Inventory Management System</h4>
+<p class="project-desc">Built a Python-based inventory management simulation for FMCG warehouse operations, covering CRUD, product and batch traceability, inventory valuation, low-stock monitoring, and local data persistence.</p>
+<div class="project-insight"><strong>Key Insight:</strong> <span>Maps a simplified warehouse workflow into functional requirements, validation controls, operational KPIs, and inventory actions — bridging software implementation with business-process thinking.</span></div>
+<div class="project-footer">
+<div class="project-tools"><span class="tool-pill">Python</span><span class="tool-pill">JSON</span><span class="tool-pill">CRUD</span><span class="tool-pill">Process Analysis</span></div>
+<a class="project-link" href="https://github.com/briannaufal211/CRUD-Inventory-System-Project" target="_blank">GitHub <svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><line x1="7" x2="17" y1="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+</div>
 </div>
 </div>
 </div>
@@ -687,6 +664,31 @@
 <p>© 2026 Brian Naufal · Data Analyst · Jakarta, Indonesia</p>
 </footer>
 <script>
+
+// Project category filters: cards can belong to more than one category.
+const projectFilters = document.querySelectorAll('.project-filter');
+const projectCards = document.querySelectorAll('#projects .project-card');
+const projectGroups = document.querySelectorAll('.project-group');
+projectFilters.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    projectFilters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    let visibleCount = 0;
+    projectCards.forEach(card => {
+      const matches = filter === 'all' || card.dataset.tags.split(' ').includes(filter);
+      card.hidden = !matches;
+      if (matches) { visibleCount++; card.classList.add('visible'); }
+    });
+    projectGroups.forEach(group => {
+      group.hidden = !Array.from(group.querySelectorAll('.project-card')).some(card => !card.hidden);
+    });
+    const category = button.childNodes[0].textContent.trim();
+    document.getElementById('projects-result').textContent = filter === 'all'
+      ? 'Showing all ' + visibleCount + ' projects'
+      : 'Showing ' + visibleCount + ' project' + (visibleCount === 1 ? '' : 's') + ' in ' + category;
+  });
+});
+
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver(entries => {
