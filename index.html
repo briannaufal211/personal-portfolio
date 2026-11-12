@@ -213,6 +213,25 @@
   }
 </style>
 
+
+<style id="certifications-style">
+  #certifications { background: var(--bg); scroll-margin-top: 60px; }
+  #certifications .cert-intro { color: var(--text2); font-size: 15px; max-width: 680px; margin: -24px 0 30px; }
+  .cert-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .cert-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 23px; display: flex; flex-direction: column; gap: 10px; min-width: 0; transition: border-color .2s, transform .2s; }
+  .cert-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .cert-card.cert-featured { border-color: rgba(0,229,176,.27); background: linear-gradient(135deg, rgba(0,229,176,.055), var(--bg2) 70%); }
+  .cert-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .cert-issuer { color: var(--accent); font-size: 12px; font-weight: 600; }
+  .cert-type { color: var(--text2); border: 1px solid var(--border2); border-radius: 5px; padding: 3px 8px; font-size: 11px; line-height: 1.4; }
+  .cert-name { font-size: 17px; font-weight: 700; line-height: 1.45; color: var(--text); margin: 2px 0 0; }
+  .cert-detail { color: var(--text2); font-size: 13px; line-height: 1.65; margin-bottom: 5px; }
+  .cert-link { color: var(--accent); font-size: 13px; font-weight: 600; align-self: flex-start; margin-top: auto; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+  .cert-link:hover { text-decoration: underline; }
+  .cert-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  @media (max-width: 700px) { .cert-grid { grid-template-columns: 1fr; } .cert-card { padding: 20px; } #certifications .cert-intro { margin-top: -20px; } }
+  @media (min-width: 821px) and (max-width: 1050px) { .nav-links { gap: 18px; } }
+</style>
 </head>
 <body>
 <nav>
@@ -222,6 +241,7 @@
 <li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#education">Education</a></li>
+<li><a href="#certifications">Certifications</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -627,6 +647,65 @@
 </div>
 </div>
 </section>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<div class="container">
+<p class="section-label reveal">Credentials</p>
+<h2 class="section-title reveal">Certifications &amp; Achievements</h2>
+<p class="cert-intro reveal">Selected credentials in data science, analytics, programming, AI and professional English.</p>
+<div class="cert-grid">
+<article class="cert-card reveal cert-featured">
+<div class="cert-meta"><span class="cert-issuer">Purwadhika Digital School</span><span class="cert-type">Training</span></div>
+<h3 class="cert-name">Data Science &amp; Machine Learning</h3>
+<p class="cert-detail">Bootcamp graduation certificate · February 2026</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1TOjqq9YmvtrCMX3aDjsMwYmxfTOFadbq/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal cert-featured">
+<div class="cert-meta"><span class="cert-issuer">Purwadhika Digital School</span><span class="cert-type">Award</span></div>
+<h3 class="cert-name">Best Student Award</h3>
+<p class="cert-detail">Data Science &amp; Machine Learning · Batch 030</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1GnW6ij-9I1UCquoqHF_MIPaV9wvqHatX/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">HackerRank</span><span class="cert-type">Skills assessment</span></div>
+<h3 class="cert-name">SQL (Intermediate)</h3>
+<p class="cert-detail">Intermediate SQL skills assessment</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1lAaf3_4BjfB7pJFCGIoomWk-MZmoz9J5/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">HackerRank</span><span class="cert-type">Skills assessment</span></div>
+<h3 class="cert-name">SQL (Basic)</h3>
+<p class="cert-detail">Foundational SQL skills assessment</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1YlsdF7xHPIJmcaKNt0GFzrVw-aOYAC94/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">HackerRank</span><span class="cert-type">Skills assessment</span></div>
+<h3 class="cert-name">Python (Basic)</h3>
+<p class="cert-detail">Foundational Python skills assessment</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1OF1jUgzFi2pRNGmz9srTjltA85yhg67v/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">EF SET</span><span class="cert-type">Language assessment</span></div>
+<h3 class="cert-name">English Certificate — C2 Proficient</h3>
+<p class="cert-detail">EF SET score: 75/100</p>
+<a class="cert-link" href="https://drive.google.com/file/d/1k3c6hwM6cqHwYdThga-rUVAa0ZwoBESi/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">Hacktiv8</span><span class="cert-type">Workshop</span></div>
+<h3 class="cert-name">AI Engineering</h3>
+<p class="cert-detail">Technical workshop · September 2026 · Certificate on page 2</p>
+<a class="cert-link" href="https://drive.google.com/file/d/115oEElovLNd35KPoN4M8IGtOtE4ezClP/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+<article class="cert-card reveal">
+<div class="cert-meta"><span class="cert-issuer">Hacktiv8</span><span class="cert-type">Workshop</span></div>
+<h3 class="cert-name">Agentic AI Automation Engineer</h3>
+<p class="cert-detail">Technical workshop · October 2026 · Certificate on page 3</p>
+<a class="cert-link" href="https://drive.google.com/file/d/115oEElovLNd35KPoN4M8IGtOtE4ezClP/view" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</article>
+</div>
+</div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
 <div class="container">
